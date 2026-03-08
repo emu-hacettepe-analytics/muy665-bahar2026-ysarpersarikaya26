@@ -1,5 +1,5 @@
 ---
-title: "Analitik sayfama hoş geldiniz"
+title: "Sarper SARIKAYA İş Analitiği Dersi Sayfasına Hoş Geldiniz !! "
 sidebar: false 
 ---
 
