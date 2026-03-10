@@ -3,14 +3,92 @@ title: "Çalışma 1"
 ---
 
 \
-(Aşağıdakiler örnek olarak verilmiştir.)
-
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
 
 ## (a)
 
-```{r}
-1 + 1
-```
+\## İzlediğim Video\
+\
+https://www.youtube.com/watch?v=tV_0pHSdLAM\
+\
+\## Video Özeti\
+\
+Bu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır. \
+Veri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu \
+ve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı \
+vurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin \
+analitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması \
+gerektiği ifade edilmektedir.
 
 ## (b)
+
+\# Açık Uçlu Soru\
+\
+Veri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\
+\
+\### Cevap\
+\
+Veri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar. \
+Endüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli \
+hale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\
+\
+\## Çoktan Seçmeli Soru\
+\
+Veri analitiğinin işletmelerdeki temel amacı nedir?\
+\
+A) Veri depolamak \
+B) Karar alma süreçlerini desteklemek \
+C) Yazılım geliştirmek \
+D) Sadece rapor hazırlamak \
+\
+\*\*Doğru cevap:\*\* B
+
+```{r echo=FALSE}
+
+library(dslabs)
+
+data(polls_us_election_2016)
+
+data <- polls_us_election_2016
+
+my_first <- "Sarper"
+my_birth_year <- 1995
+
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+k
+
+if (k %% 2 == 0) {
+  head(data, k)
+} else {
+  tail(data, k)
+}
+
+sum(is.na(data))
+
+sort(colSums(is.na(data)), decreasing = TRUE)[1:8]
+
+new_data <- data
+
+for(i in 1:ncol(new_data)){
+  
+  if(is.numeric(new_data[[i]])){
+    new_data[[i]][is.na(new_data[[i]])] <- my_birth_year + k
+  }
+  
+  if(is.character(new_data[[i]]) || is.factor(new_data[[i]])){
+    new_data[[i]][is.na(new_data[[i]])] <- paste0(my_first, "_", k)
+  }
+}
+
+if (k %% 2 == 0) {
+  head(new_data, k)
+} else {
+  tail(new_data, k)
+}
+
+sum(is.na(new_data))
+
+anyNA(new_data)
+
+```
+
+## 
