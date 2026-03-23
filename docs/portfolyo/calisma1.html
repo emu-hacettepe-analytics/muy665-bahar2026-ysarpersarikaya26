@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -350,8 +385,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a">(a)</a></li>
-  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
+  <li><a href="#soru-3" id="toc-soru-3" class="nav-link active" data-scroll-target="#soru-3">Soru 3</a></li>
+  <li><a href="#soru-4" id="toc-soru-4" class="nav-link" data-scroll-target="#soru-4">Soru 4</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
@@ -385,34 +420,34 @@ ul.task-list li input[type="checkbox"] {
 
 <p><br>
 </p>
-<section id="a" class="level2">
-<h2 class="anchored" data-anchor-id="a">(a)</h2>
-<p>## İzlediğim Video<br>
+<section id="soru-3" class="level2">
+<h2 class="anchored" data-anchor-id="soru-3">Soru 3</h2>
+<ol type="a">
+<li><p>İzlenen Video<br>
 <br>
 https://www.youtube.com/watch?v=tV_0pHSdLAM<br>
 <br>
-## Video Özeti<br>
+&nbsp;Video Özeti<br>
 <br>
 Bu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.<br>
 Veri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu<br>
 ve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı<br>
 vurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin<br>
 analitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması<br>
-gerektiği ifade edilmektedir.</p>
-</section>
-<section id="b" class="level2">
-<h2 class="anchored" data-anchor-id="b">(b)</h2>
-<p># Açık Uçlu Soru<br>
+gerektiği ifade edilmektedir.</p></li>
+<li><p>Soru oluşturma: // Sorular oluşturulurken Chatgpt’den yardım alınmıştır//</p></li>
+</ol>
+<p>Açık Uçlu Soru<br>
 <br>
 Veri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?<br>
 <br>
-### Cevap<br>
+&nbsp;Cevap<br>
 <br>
 Veri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.<br>
 Endüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli<br>
 hale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.<br>
 <br>
-## Çoktan Seçmeli Soru<br>
+&nbsp;Çoktan Seçmeli Soru<br>
 <br>
 Veri analitiğinin işletmelerdeki temel amacı nedir?<br>
 <br>
@@ -421,11 +456,31 @@ B) Karar alma süreçlerini desteklemek<br>
 C) Yazılım geliştirmek<br>
 D) Sadece rapor hazırlamak<br>
 <br>
-**Doğru cevap:** B</p>
+**Doğru cevap:** B ## Veri Analizi</p>
+</section>
+<section id="soru-4" class="level2">
+<h2 class="anchored" data-anchor-id="soru-4">Soru 4</h2>
+<p>Kod oluşturulurken Chatgpt’den yardım alınmıştır.</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(polls_us_election_2016)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> polls_us_election_2016</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>my_first <span class="ot">&lt;-</span> <span class="st">"Sarper"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>my_birth_year <span class="ot">&lt;-</span> <span class="dv">1995</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> (<span class="fu">nchar</span>(my_first) <span class="sc">+</span> my_birth_year) <span class="sc">%%</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>k</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (k <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(data, k)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(data, k)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        state  startdate    enddate
 1        U.S. 2016-11-03 2016-11-06
@@ -488,23 +543,38 @@ D) Sadece rapor hazırlamak<br>
 13        48.86765      43.39600        4.838600               NA
 14        47.43805      42.32751        2.207659               NA</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11604</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(data)), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>rawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson 
             4178             4178             1409             1409 
            grade       samplesize            state        startdate 
              429                1                0                0 </code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = "Sarper_14"):
-invalid factor level, NA generated
-Warning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = "Sarper_14"):
-invalid factor level, NA generated
-Warning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = "Sarper_14"):
-invalid factor level, NA generated</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> data</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(new_data)){</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.numeric</span>(new_data[[i]])){</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    new_data[[i]][<span class="fu">is.na</span>(new_data[[i]])] <span class="ot">&lt;-</span> my_birth_year <span class="sc">+</span> k</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    new_data[[i]] <span class="ot">&lt;-</span> <span class="fu">as.character</span>(new_data[[i]])</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    new_data[[i]][<span class="fu">is.na</span>(new_data[[i]])] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(my_first, <span class="st">"_"</span>, k)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (k <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(new_data, k)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(new_data, k)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        state  startdate    enddate
 1        U.S. 2016-11-03 2016-11-06
@@ -521,62 +591,80 @@ invalid factor level, NA generated</code></pre>
 12       U.S. 2016-11-01 2016-11-04
 13       U.S. 2016-11-03 2016-11-06
 14   Virginia 2016-11-03 2016-11-04
-                                                     pollster grade samplesize
-1                                    ABC News/Washington Post    A+       2220
-2                                     Google Consumer Surveys     B      26574
-3                                                       Ipsos    A-       2195
-4                                                      YouGov     B       3677
-5                                            Gravis Marketing    B-      16639
-6  Fox News/Anderson Robbins Research/Shaw &amp; Company Research     A       1295
-7                                     CBS News/New York Times    A-       1426
-8                                NBC News/Wall Street Journal    A-       1282
-9                                                    Zia Poll  &lt;NA&gt;       8439
-10                                                   IBD/TIPP    A-       1107
-11                                           Selzer &amp; Company    A+        799
-12                                          Angus Reid Global    A-       1151
-13                                        Monmouth University    A+        748
-14                                      Public Policy Polling    B+       1238
-   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin
-1          lv           47.00         43.00            4.00             2009
-2          lv           38.03         35.69            5.46             2009
-3          lv           42.00         39.00            6.00             2009
-4          lv           45.00         41.00            5.00             2009
-5          rv           47.00         43.00            3.00             2009
-6          lv           48.00         44.00            3.00             2009
-7          lv           45.00         41.00            5.00             2009
-8          lv           44.00         40.00            6.00             2009
-9          lv           46.00         44.00            6.00             2009
-10         lv           41.20         42.70            7.10             2009
-11         lv           44.00         41.00            4.00             2009
-12         lv           48.00         44.00            6.00             2009
-13         lv           50.00         44.00            4.00             2009
-14         lv           48.00         43.00            1.00             2009
-   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin
-1         45.20163      41.72430        4.626221             2009
-2         43.34557      41.21439        5.175792             2009
-3         42.02638      38.81620        6.844734             2009
-4         45.65676      40.92004        6.069454             2009
-5         46.84089      42.33184        3.726098             2009
-6         49.02208      43.95631        3.057876             2009
-7         45.11649      40.92722        4.341786             2009
-8         43.58576      40.77325        5.365788             2009
-9         44.82594      41.59978        7.870127             2009
-10        42.92745      42.23545        6.316175             2009
-11        44.21714      40.57082        4.068708             2009
-12        47.57171      43.68125        5.556625             2009
-13        48.86765      43.39600        4.838600             2009
-14        47.43805      42.32751        2.207659             2009</code></pre>
+                                                     pollster     grade
+1                                    ABC News/Washington Post        A+
+2                                     Google Consumer Surveys         B
+3                                                       Ipsos        A-
+4                                                      YouGov         B
+5                                            Gravis Marketing        B-
+6  Fox News/Anderson Robbins Research/Shaw &amp; Company Research         A
+7                                     CBS News/New York Times        A-
+8                                NBC News/Wall Street Journal        A-
+9                                                    Zia Poll Sarper_14
+10                                                   IBD/TIPP        A-
+11                                           Selzer &amp; Company        A+
+12                                          Angus Reid Global        A-
+13                                        Monmouth University        A+
+14                                      Public Policy Polling        B+
+   samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson
+1        2220         lv           47.00         43.00            4.00
+2       26574         lv           38.03         35.69            5.46
+3        2195         lv           42.00         39.00            6.00
+4        3677         lv           45.00         41.00            5.00
+5       16639         rv           47.00         43.00            3.00
+6        1295         lv           48.00         44.00            3.00
+7        1426         lv           45.00         41.00            5.00
+8        1282         lv           44.00         40.00            6.00
+9        8439         lv           46.00         44.00            6.00
+10       1107         lv           41.20         42.70            7.10
+11        799         lv           44.00         41.00            4.00
+12       1151         lv           48.00         44.00            6.00
+13        748         lv           50.00         44.00            4.00
+14       1238         lv           48.00         43.00            1.00
+   rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson
+1              2009        45.20163      41.72430        4.626221
+2              2009        43.34557      41.21439        5.175792
+3              2009        42.02638      38.81620        6.844734
+4              2009        45.65676      40.92004        6.069454
+5              2009        46.84089      42.33184        3.726098
+6              2009        49.02208      43.95631        3.057876
+7              2009        45.11649      40.92722        4.341786
+8              2009        43.58576      40.77325        5.365788
+9              2009        44.82594      41.59978        7.870127
+10             2009        42.92745      42.23545        6.316175
+11             2009        44.21714      40.57082        4.068708
+12             2009        47.57171      43.68125        5.556625
+13             2009        48.86765      43.39600        4.838600
+14             2009        47.43805      42.32751        2.207659
+   adjpoll_mcmullin
+1              2009
+2              2009
+3              2009
+4              2009
+5              2009
+6              2009
+7              2009
+8              2009
+9              2009
+10             2009
+11             2009
+12             2009
+13             2009
+14             2009</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(new_data))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 429</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anyNA</span>(new_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
+<pre><code>[1] FALSE</code></pre>
 </div>
 </div>
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
+<p>:::</p>
 
 
 </section>

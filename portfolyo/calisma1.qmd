@@ -4,45 +4,48 @@ title: "Çalışma 1"
 
 \
 
-## (a)
+## Soru 3 
 
-\## İzlediğim Video\
+(a) İzlenen Video\
 \
 https://www.youtube.com/watch?v=tV_0pHSdLAM\
 \
-\## Video Özeti\
+\ Video Özeti\
 \
-Bu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır. \
-Veri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu \
-ve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı \
-vurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin \
-analitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması \
+Bu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.\
+Veri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu\
+ve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı\
+vurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin\
+analitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması\
 gerektiği ifade edilmektedir.
 
-## (b)
+(b) Soru oluşturma: // Sorular oluşturulurken Chatgpt'den yardım alınmıştır//
 
-\# Açık Uçlu Soru\
+Açık Uçlu Soru\
 \
 Veri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\
 \
-\### Cevap\
+\ Cevap\
 \
-Veri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar. \
-Endüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli \
+Veri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.\
+Endüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli\
 hale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\
 \
-\## Çoktan Seçmeli Soru\
+\ Çoktan Seçmeli Soru\
 \
 Veri analitiğinin işletmelerdeki temel amacı nedir?\
 \
-A) Veri depolamak \
-B) Karar alma süreçlerini desteklemek \
-C) Yazılım geliştirmek \
-D) Sadece rapor hazırlamak \
+A) Veri depolamak\
+B) Karar alma süreçlerini desteklemek\
+C) Yazılım geliştirmek\
+D) Sadece rapor hazırlamak\
 \
-\*\*Doğru cevap:\*\* B
+\*\*Doğru cevap:\*\* B \## Veri Analizi
 
-```{r echo=FALSE}
+## Soru 4 
+Kod oluşturulurken Chatgpt'den yardım alınmıştır.
+
+```{r}
 
 library(dslabs)
 
@@ -71,10 +74,13 @@ new_data <- data
 for(i in 1:ncol(new_data)){
   
   if(is.numeric(new_data[[i]])){
+    
     new_data[[i]][is.na(new_data[[i]])] <- my_birth_year + k
-  }
-  
-  if(is.character(new_data[[i]]) || is.factor(new_data[[i]])){
+    
+  } else {
+    
+    new_data[[i]] <- as.character(new_data[[i]])
+    
     new_data[[i]][is.na(new_data[[i]])] <- paste0(my_first, "_", k)
   }
 }
@@ -92,3 +98,4 @@ anyNA(new_data)
 ```
 
 ## 
+:::
