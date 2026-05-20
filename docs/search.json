@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "Bu sayfa yapım aşamasındadır.\n\n\n\n Back to top"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Sarper SARIKAYA İş Analitiği Dersi Sayfasına Hoş Geldiniz !!",
@@ -7,241 +14,33 @@
     "text": "MUY660-İş Analitiği dersi sayfama hoş geldiniz.\nBu analitik çalışmalarımızı paylaşıyorum.\n\n\n\n Back to top"
   },
   {
-    "objectID": "teammembers/volkansonmez.html",
-    "href": "teammembers/volkansonmez.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team.html",
-    "href": "team.html",
-    "title": "Takım Üyeleri",
-    "section": "",
-    "text": "Use left menu to see the detailed CVs of our Team Members.\n\nTeam Members\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
+    "objectID": "portfolyo/calisma1.html#soru-3",
+    "href": "portfolyo/calisma1.html#soru-3",
+    "title": "Çalışma 1",
+    "section": "Soru 3",
+    "text": "Soru 3\n\nİzlenen Video\n\nhttps://www.youtube.com/watch?v=tV_0pHSdLAM\n\n Video Özeti\n\nBu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.\nVeri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu\nve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı\nvurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin\nanalitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması\ngerektiği ifade edilmektedir.\nSoru oluşturma: // Sorular oluşturulurken Chatgpt’den yardım alınmıştır//\n\nAçık Uçlu Soru\n\nVeri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\n\n Cevap\n\nVeri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.\nEndüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli\nhale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\n\n Çoktan Seçmeli Soru\n\nVeri analitiğinin işletmelerdeki temel amacı nedir?\n\nA) Veri depolamak\nB) Karar alma süreçlerini desteklemek\nC) Yazılım geliştirmek\nD) Sadece rapor hazırlamak\n\n**Doğru cevap:** B ## Veri Analizi",
     "crumbs": [
-      "Team Members",
-      "Takım Üyeleri"
+      "Çalışma 1"
     ]
   },
   {
-    "objectID": "assignments/assignment-2.html",
-    "href": "assignments/assignment-2.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
+    "objectID": "portfolyo/calisma1.html#soru-4",
+    "href": "portfolyo/calisma1.html#soru-4",
+    "title": "Çalışma 1",
+    "section": "Soru 4",
+    "text": "Soru 4\nKod oluşturulurken Chatgpt’den yardım alınmıştır.\n\nlibrary(dslabs)\n\ndata(polls_us_election_2016)\n\ndata &lt;- polls_us_election_2016\n\nmy_first &lt;- \"Sarper\"\nmy_birth_year &lt;- 1995\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 14\n\nif (k %% 2 == 0) {\n  head(data, k)\n} else {\n  tail(data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00               NA\n2          lv           38.03         35.69            5.46               NA\n3          lv           42.00         39.00            6.00               NA\n4          lv           45.00         41.00            5.00               NA\n5          rv           47.00         43.00            3.00               NA\n6          lv           48.00         44.00            3.00               NA\n7          lv           45.00         41.00            5.00               NA\n8          lv           44.00         40.00            6.00               NA\n9          lv           46.00         44.00            6.00               NA\n10         lv           41.20         42.70            7.10               NA\n11         lv           44.00         41.00            4.00               NA\n12         lv           48.00         44.00            6.00               NA\n13         lv           50.00         44.00            4.00               NA\n14         lv           48.00         43.00            1.00               NA\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221               NA\n2         43.34557      41.21439        5.175792               NA\n3         42.02638      38.81620        6.844734               NA\n4         45.65676      40.92004        6.069454               NA\n5         46.84089      42.33184        3.726098               NA\n6         49.02208      43.95631        3.057876               NA\n7         45.11649      40.92722        4.341786               NA\n8         43.58576      40.77325        5.365788               NA\n9         44.82594      41.59978        7.870127               NA\n10        42.92745      42.23545        6.316175               NA\n11        44.21714      40.57082        4.068708               NA\n12        47.57171      43.68125        5.556625               NA\n13        48.86765      43.39600        4.838600               NA\n14        47.43805      42.32751        2.207659               NA\n\nsum(is.na(data))\n\n[1] 11604\n\nsort(colSums(is.na(data)), decreasing = TRUE)[1:8]\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\nnew_data &lt;- data\n\nfor(i in 1:ncol(new_data)){\n  \n  if(is.numeric(new_data[[i]])){\n    \n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n    \n  } else {\n    \n    new_data[[i]] &lt;- as.character(new_data[[i]])\n    \n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n  }\n}\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster     grade\n1                                    ABC News/Washington Post        A+\n2                                     Google Consumer Surveys         B\n3                                                       Ipsos        A-\n4                                                      YouGov         B\n5                                            Gravis Marketing        B-\n6  Fox News/Anderson Robbins Research/Shaw & Company Research         A\n7                                     CBS News/New York Times        A-\n8                                NBC News/Wall Street Journal        A-\n9                                                    Zia Poll Sarper_14\n10                                                   IBD/TIPP        A-\n11                                           Selzer & Company        A+\n12                                          Angus Reid Global        A-\n13                                        Monmouth University        A+\n14                                      Public Policy Polling        B+\n   samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n1        2220         lv           47.00         43.00            4.00\n2       26574         lv           38.03         35.69            5.46\n3        2195         lv           42.00         39.00            6.00\n4        3677         lv           45.00         41.00            5.00\n5       16639         rv           47.00         43.00            3.00\n6        1295         lv           48.00         44.00            3.00\n7        1426         lv           45.00         41.00            5.00\n8        1282         lv           44.00         40.00            6.00\n9        8439         lv           46.00         44.00            6.00\n10       1107         lv           41.20         42.70            7.10\n11        799         lv           44.00         41.00            4.00\n12       1151         lv           48.00         44.00            6.00\n13        748         lv           50.00         44.00            4.00\n14       1238         lv           48.00         43.00            1.00\n   rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n1              2009        45.20163      41.72430        4.626221\n2              2009        43.34557      41.21439        5.175792\n3              2009        42.02638      38.81620        6.844734\n4              2009        45.65676      40.92004        6.069454\n5              2009        46.84089      42.33184        3.726098\n6              2009        49.02208      43.95631        3.057876\n7              2009        45.11649      40.92722        4.341786\n8              2009        43.58576      40.77325        5.365788\n9              2009        44.82594      41.59978        7.870127\n10             2009        42.92745      42.23545        6.316175\n11             2009        44.21714      40.57082        4.068708\n12             2009        47.57171      43.68125        5.556625\n13             2009        48.86765      43.39600        4.838600\n14             2009        47.43805      42.32751        2.207659\n   adjpoll_mcmullin\n1              2009\n2              2009\n3              2009\n4              2009\n5              2009\n6              2009\n7              2009\n8              2009\n9              2009\n10             2009\n11             2009\n12             2009\n13             2009\n14             2009\n\nsum(is.na(new_data))\n\n[1] 0\n\nanyNA(new_data)\n\n[1] FALSE",
     "crumbs": [
-      "Assignment 2"
+      "Çalışma 1"
     ]
   },
   {
-    "objectID": "analysis.html",
-    "href": "analysis.html",
-    "title": "Analysis",
+    "objectID": "portfolyo/calisma1.html#section",
+    "href": "portfolyo/calisma1.html#section",
+    "title": "Çalışma 1",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "assignments/assignment-1.html",
-    "href": "assignments/assignment-1.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
+    "text": ":::",
     "crumbs": [
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data",
-    "section": "",
-    "text": "Data source: xxx\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teammembers/erdidasdemir.html",
-    "href": "teammembers/erdidasdemir.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
-  },
-  {
-    "objectID": "team/volkansonmez.html",
-    "href": "team/volkansonmez.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Project Team",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "team/erdidasdemir.html",
-    "href": "team/erdidasdemir.html",
-    "title": "Erdi Dasdemir",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
-    "crumbs": [
-      "Team Members",
-      "Erdi Dasdemir"
-    ]
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "My Assignments",
-    "section": "",
-    "text": "On this page, I showcase the assignment I conducted for the [term and year, e.g. Spring 2024] EMU660 Decision Making with Analytics course.\nPlease use left menu to navigate through my assignments.\n\n\n\n Back to top",
-    "crumbs": [
-      "Assignments",
-      "My Assignments"
-    ]
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Project X",
-    "section": "",
-    "text": "Welcome to my project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
-  },
-  {
-    "objectID": "project.html#data-source",
-    "href": "project.html#data-source",
-    "title": "Project X",
-    "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#general-information-about-data",
-    "href": "project.html#general-information-about-data",
-    "title": "Project X",
-    "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#reason-of-choice",
-    "href": "project.html#reason-of-choice",
-    "title": "Project X",
-    "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#preprocessing",
-    "href": "project.html#preprocessing",
-    "title": "Project X",
-    "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#exploratory-data-analysis",
-    "href": "project.html#exploratory-data-analysis",
-    "title": "Project X",
-    "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#trend-analysis",
-    "href": "project.html#trend-analysis",
-    "title": "Project X",
-    "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#model-fitting",
-    "href": "project.html#model-fitting",
-    "title": "Project X",
-    "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#results",
-    "href": "project.html#results",
-    "title": "Project X",
-    "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
-  },
-  {
-    "objectID": "team/szymanski.html",
-    "href": "team/szymanski.html",
-    "title": "Sebastian Szymański",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team/edindzeko.html",
-    "href": "team/edindzeko.html",
-    "title": "Edin_Džeko",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
-  },
-  {
-    "objectID": "team/dusantadic.html",
-    "href": "team/dusantadic.html",
-    "title": "Dusan Tadic",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team/fred.html",
-    "href": "team/fred.html",
-    "title": "Frederico Rodrigues",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html#proje-adı",
-    "href": "index.html#proje-adı",
-    "title": "Takım: XXX",
-    "section": "Proje Adı",
-    "text": "Proje Adı\nMUY660-İş Analitiği iyileştirme çalışmaları (örnek)"
-  },
-  {
-    "objectID": "index.html#proje-konusu",
-    "href": "index.html#proje-konusu",
-    "title": "Takım: XXX",
-    "section": "Proje Konusu",
-    "text": "Proje Konusu\nÖrnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik."
-  },
-  {
-    "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
-    "href": "index.html#veri-seti-hakkında-özet-bilgi",
-    "title": "Takım: XXX",
-    "section": "Veri Seti Hakkında Özet Bilgi",
-    "text": "Veri Seti Hakkında Özet Bilgi"
-  },
-  {
-    "objectID": "index.html#sonuçlar",
-    "href": "index.html#sonuçlar",
-    "title": "Takım: XXX",
-    "section": "Sonuçlar",
-    "text": "Sonuçlar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır."
-  },
-  {
-    "objectID": "index.html#takım-üyeleri",
-    "href": "index.html#takım-üyeleri",
-    "title": "Takım: XXX",
-    "section": "Takım Üyeleri",
-    "text": "Takım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański"
-  },
-  {
-    "objectID": "portfolyo.html",
-    "href": "portfolyo.html",
-    "title": "Portfolyo",
-    "section": "",
-    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
-    "crumbs": [
-      "Portfolyo"
-    ]
-  },
-  {
-    "objectID": "takim.html",
-    "href": "takim.html",
-    "title": "Takım Üyeleri",
-    "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Takım Üyeleri"
+      "Çalışma 1"
     ]
   },
   {
@@ -249,83 +48,7 @@
     "href": "proje.html",
     "title": "Proje X (proje adını yazınız)",
     "section": "",
-    "text": "Proje sayfamıza hoş geldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
-  },
-  {
-    "objectID": "proje.html#data-source",
-    "href": "proje.html#data-source",
-    "title": "Proje X",
-    "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#general-information-about-data",
-    "href": "proje.html#general-information-about-data",
-    "title": "Proje X",
-    "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#reason-of-choice",
-    "href": "proje.html#reason-of-choice",
-    "title": "Proje X",
-    "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#preprocessing",
-    "href": "proje.html#preprocessing",
-    "title": "Proje X",
-    "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#exploratory-data-analysis",
-    "href": "proje.html#exploratory-data-analysis",
-    "title": "Proje X",
-    "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#trend-analysis",
-    "href": "proje.html#trend-analysis",
-    "title": "Proje X",
-    "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#model-fitting",
-    "href": "proje.html#model-fitting",
-    "title": "Proje X",
-    "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#results",
-    "href": "proje.html#results",
-    "title": "Proje X",
-    "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
-  },
-  {
-    "objectID": "portfolyo/calisma2.html",
-    "href": "portfolyo/calisma2.html",
-    "title": "Çalışma 2",
-    "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
-    "crumbs": [
-      "Çalışma 2"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html",
-    "href": "portfolyo/calisma1.html",
-    "title": "Çalışma 1",
-    "section": "",
-    "text": "## İzlediğim Video\n\nhttps://www.youtube.com/watch?v=tV_0pHSdLAM\n\n## Video Özeti\n\nBu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.\nVeri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu\nve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı\nvurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin\nanalitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması\ngerektiği ifade edilmektedir.\n# Açık Uçlu Soru\n\nVeri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\n\n### Cevap\n\nVeri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.\nEndüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli\nhale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\n\n## Çoktan Seçmeli Soru\n\nVeri analitiğinin işletmelerdeki temel amacı nedir?\n\nA) Veri depolamak\nB) Karar alma süreçlerini desteklemek\nC) Yazılım geliştirmek\nD) Sadece rapor hazırlamak\n\n**Doğru cevap:** B",
-    "crumbs": [
-      "Çalışma 1"
-    ]
+    "text": "Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
   },
   {
     "objectID": "proje.html#veri-kaynağı",
@@ -384,13 +107,23 @@
     "text": "3.4 Sonuçlar\nxxxxxx"
   },
   {
-    "objectID": "portfolyo/calisma1.html#a",
-    "href": "portfolyo/calisma1.html#a",
-    "title": "Çalışma 1",
-    "section": "(a)",
-    "text": "(a)\n## İzlediğim Video\n\nhttps://www.youtube.com/watch?v=tV_0pHSdLAM\n\n## Video Özeti\n\nBu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.\nVeri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu\nve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı\nvurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin\nanalitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması\ngerektiği ifade edilmektedir.",
+    "objectID": "portfolyo.html",
+    "href": "portfolyo.html",
+    "title": "Portfolyo",
+    "section": "",
+    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
     "crumbs": [
-      "Çalışma 1"
+      "Portfolyo"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma2.html",
+    "href": "portfolyo/calisma2.html",
+    "title": "Çalışma 2",
+    "section": "",
+    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
+    "crumbs": [
+      "Çalışma 2"
     ]
   },
   {
@@ -414,135 +147,11 @@
     ]
   },
   {
-    "objectID": "portfolyo/calisma1.html#b",
-    "href": "portfolyo/calisma1.html#b",
-    "title": "Çalışma 1",
-    "section": "(b)",
-    "text": "(b)\n# Açık Uçlu Soru\n\nVeri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\n\n### Cevap\n\nVeri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.\nEndüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli\nhale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\n\n## Çoktan Seçmeli Soru\n\nVeri analitiğinin işletmelerdeki temel amacı nedir?\n\nA) Veri depolamak\nB) Karar alma süreçlerini desteklemek\nC) Yazılım geliştirmek\nD) Sadece rapor hazırlamak\n\n**Doğru cevap:** B ## Veri Analizi\n\nlibrary(dslabs)\n\ndata(polls_us_election_2016)\n\ndata &lt;- polls_us_election_2016\n\nmy_first &lt;- \"Sarper\"\nmy_birth_year &lt;- 1995\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 14\n\nif (k %% 2 == 0) {\n  head(data, k)\n} else {\n  tail(data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00               NA\n2          lv           38.03         35.69            5.46               NA\n3          lv           42.00         39.00            6.00               NA\n4          lv           45.00         41.00            5.00               NA\n5          rv           47.00         43.00            3.00               NA\n6          lv           48.00         44.00            3.00               NA\n7          lv           45.00         41.00            5.00               NA\n8          lv           44.00         40.00            6.00               NA\n9          lv           46.00         44.00            6.00               NA\n10         lv           41.20         42.70            7.10               NA\n11         lv           44.00         41.00            4.00               NA\n12         lv           48.00         44.00            6.00               NA\n13         lv           50.00         44.00            4.00               NA\n14         lv           48.00         43.00            1.00               NA\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221               NA\n2         43.34557      41.21439        5.175792               NA\n3         42.02638      38.81620        6.844734               NA\n4         45.65676      40.92004        6.069454               NA\n5         46.84089      42.33184        3.726098               NA\n6         49.02208      43.95631        3.057876               NA\n7         45.11649      40.92722        4.341786               NA\n8         43.58576      40.77325        5.365788               NA\n9         44.82594      41.59978        7.870127               NA\n10        42.92745      42.23545        6.316175               NA\n11        44.21714      40.57082        4.068708               NA\n12        47.57171      43.68125        5.556625               NA\n13        48.86765      43.39600        4.838600               NA\n14        47.43805      42.32751        2.207659               NA\n\nsum(is.na(data))\n\n[1] 11604\n\nsort(colSums(is.na(data)), decreasing = TRUE)[1:8]\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\nnew_data &lt;- data\n\nfor(i in 1:ncol(new_data)){\n  \n  if(is.numeric(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n  }\n  \n  if(is.character(new_data[[i]]) || is.factor(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n  }\n}\n\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00             2009\n2          lv           38.03         35.69            5.46             2009\n3          lv           42.00         39.00            6.00             2009\n4          lv           45.00         41.00            5.00             2009\n5          rv           47.00         43.00            3.00             2009\n6          lv           48.00         44.00            3.00             2009\n7          lv           45.00         41.00            5.00             2009\n8          lv           44.00         40.00            6.00             2009\n9          lv           46.00         44.00            6.00             2009\n10         lv           41.20         42.70            7.10             2009\n11         lv           44.00         41.00            4.00             2009\n12         lv           48.00         44.00            6.00             2009\n13         lv           50.00         44.00            4.00             2009\n14         lv           48.00         43.00            1.00             2009\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221             2009\n2         43.34557      41.21439        5.175792             2009\n3         42.02638      38.81620        6.844734             2009\n4         45.65676      40.92004        6.069454             2009\n5         46.84089      42.33184        3.726098             2009\n6         49.02208      43.95631        3.057876             2009\n7         45.11649      40.92722        4.341786             2009\n8         43.58576      40.77325        5.365788             2009\n9         44.82594      41.59978        7.870127             2009\n10        42.92745      42.23545        6.316175             2009\n11        44.21714      40.57082        4.068708             2009\n12        47.57171      43.68125        5.556625             2009\n13        48.86765      43.39600        4.838600             2009\n14        47.43805      42.32751        2.207659             2009\n\nsum(is.na(new_data))\n\n[1] 429\n\nanyNA(new_data)\n\n[1] TRUE",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html",
-    "href": "takim/dusantadic.html",
-    "title": "Dusan Tadic",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Hakkımda",
     "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#employements",
-    "href": "takim/szymanski.html#employements",
-    "title": "Sebastian Szymański",
-    "section": "Employements",
-    "text": "Employements\n\nFirm xxx, position xx, year xxx\nFirm yyy, position yyy, year yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#internships",
-    "href": "takim/szymanski.html#internships",
-    "title": "Sebastian Szymański",
-    "section": "Internships",
-    "text": "Internships\n\nFirm aaa, position xx, year xxx\nFirm bbb, position yyy, year yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#işler",
-    "href": "takim/szymanski.html#işler",
-    "title": "Sebastian Szymański",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#stajlar",
-    "href": "takim/szymanski.html#stajlar",
-    "title": "Sebastian Szymański",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/edindzeko.html#işler",
-    "href": "takim/edindzeko.html#işler",
-    "title": "Edin_Džeko",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
-  },
-  {
-    "objectID": "takim/edindzeko.html#stajlar",
-    "href": "takim/edindzeko.html#stajlar",
-    "title": "Edin_Džeko",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
-  },
-  {
-    "objectID": "takim/fred.html#işler",
-    "href": "takim/fred.html#işler",
-    "title": "Frederico Rodrigues",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Frederico Rodrigues"
-    ]
-  },
-  {
-    "objectID": "takim/fred.html#stajlar",
-    "href": "takim/fred.html#stajlar",
-    "title": "Frederico Rodrigues",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Frederico Rodrigues"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html#işler",
-    "href": "takim/dusantadic.html#işler",
-    "title": "Dusan Tadic",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html#stajlar",
-    "href": "takim/dusantadic.html#stajlar",
-    "title": "Dusan Tadic",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
+    "text": "Ben Sarper Sarıkaya.\nHacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans programında öğrenciyim"
   },
   {
     "objectID": "about.html#employements",
@@ -557,69 +166,5 @@
     "title": "Hakkımda",
     "section": "Internships",
     "text": "Internships\n\nGes Mühendislik, Stajyer Mühendis, Ağustos 2016 - Eylül 2016\nMKE Maksam, Stajyer Mühendis, Ağustos 2017 - Eylül 2017"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "My Blog",
-    "section": "",
-    "text": "Bu sayfa yapım aşamasındadır.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Hakkımda",
-    "section": "",
-    "text": "Ben Sarper Sarıkaya.\nHacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans programında öğrenciyim"
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#section",
-    "href": "portfolyo/calisma1.html#section",
-    "title": "Çalışma 1",
-    "section": "",
-    "text": ":::",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#soru-3",
-    "href": "portfolyo/calisma1.html#soru-3",
-    "title": "Çalışma 1",
-    "section": "Soru 3",
-    "text": "Soru 3\n\nİzlenen Video\n\nhttps://www.youtube.com/watch?v=tV_0pHSdLAM\n\n Video Özeti\n\nBu videoda veri bilimi ile endüstri mühendisliği arasındaki ilişki ele alınmaktadır.\nVeri analitiğinin günümüzde şirketler için önemli bir karar destek aracı olduğu\nve işletmelerin veri temelli kararlar almasının rekabet avantajı sağladığı\nvurgulanmaktadır. Ayrıca veri bilimi alanında çalışmak isteyen mühendislerin\nanalitik düşünme, problem çözme ve veri yorumlama becerilerine sahip olması\ngerektiği ifade edilmektedir.\nSoru oluşturma: // Sorular oluşturulurken Chatgpt’den yardım alınmıştır//\n\nAçık Uçlu Soru\n\nVeri bilimi ve endüstri mühendisliği arasındaki ilişki nedir?\n\n Cevap\n\nVeri bilimi, verileri analiz ederek anlamlı sonuçlar çıkarmayı amaçlar.\nEndüstri mühendisliği ise bu analizleri kullanarak sistemleri daha verimli\nhale getirmeyi hedefler. Bu nedenle veri analitiği iki alanın ortak noktasıdır.\n\n Çoktan Seçmeli Soru\n\nVeri analitiğinin işletmelerdeki temel amacı nedir?\n\nA) Veri depolamak\nB) Karar alma süreçlerini desteklemek\nC) Yazılım geliştirmek\nD) Sadece rapor hazırlamak\n\n**Doğru cevap:** B ## Veri Analizi",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#soru-4-5-kod-oluşturulurken-chatgptden-yardım-alınmıştır.",
-    "href": "portfolyo/calisma1.html#soru-4-5-kod-oluşturulurken-chatgptden-yardım-alınmıştır.",
-    "title": "Çalışma 1",
-    "section": "Soru 4-5 / Kod oluşturulurken Chatgpt’den yardım alınmıştır.",
-    "text": "Soru 4-5 / Kod oluşturulurken Chatgpt’den yardım alınmıştır.\n\nlibrary(dslabs)\n\ndata(polls_us_election_2016)\n\ndata &lt;- polls_us_election_2016\n\nmy_first &lt;- \"Sarper\"\nmy_birth_year &lt;- 1995\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 14\n\nif (k %% 2 == 0) {\n  head(data, k)\n} else {\n  tail(data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00               NA\n2          lv           38.03         35.69            5.46               NA\n3          lv           42.00         39.00            6.00               NA\n4          lv           45.00         41.00            5.00               NA\n5          rv           47.00         43.00            3.00               NA\n6          lv           48.00         44.00            3.00               NA\n7          lv           45.00         41.00            5.00               NA\n8          lv           44.00         40.00            6.00               NA\n9          lv           46.00         44.00            6.00               NA\n10         lv           41.20         42.70            7.10               NA\n11         lv           44.00         41.00            4.00               NA\n12         lv           48.00         44.00            6.00               NA\n13         lv           50.00         44.00            4.00               NA\n14         lv           48.00         43.00            1.00               NA\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221               NA\n2         43.34557      41.21439        5.175792               NA\n3         42.02638      38.81620        6.844734               NA\n4         45.65676      40.92004        6.069454               NA\n5         46.84089      42.33184        3.726098               NA\n6         49.02208      43.95631        3.057876               NA\n7         45.11649      40.92722        4.341786               NA\n8         43.58576      40.77325        5.365788               NA\n9         44.82594      41.59978        7.870127               NA\n10        42.92745      42.23545        6.316175               NA\n11        44.21714      40.57082        4.068708               NA\n12        47.57171      43.68125        5.556625               NA\n13        48.86765      43.39600        4.838600               NA\n14        47.43805      42.32751        2.207659               NA\n\nsum(is.na(data))\n\n[1] 11604\n\nsort(colSums(is.na(data)), decreasing = TRUE)[1:8]\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\nnew_data &lt;- data\n\nfor(i in 1:ncol(new_data)){\n  \n  if(is.numeric(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n  }\n  \n  if(is.character(new_data[[i]]) || is.factor(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n  }\n}\n\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00             2009\n2          lv           38.03         35.69            5.46             2009\n3          lv           42.00         39.00            6.00             2009\n4          lv           45.00         41.00            5.00             2009\n5          rv           47.00         43.00            3.00             2009\n6          lv           48.00         44.00            3.00             2009\n7          lv           45.00         41.00            5.00             2009\n8          lv           44.00         40.00            6.00             2009\n9          lv           46.00         44.00            6.00             2009\n10         lv           41.20         42.70            7.10             2009\n11         lv           44.00         41.00            4.00             2009\n12         lv           48.00         44.00            6.00             2009\n13         lv           50.00         44.00            4.00             2009\n14         lv           48.00         43.00            1.00             2009\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221             2009\n2         43.34557      41.21439        5.175792             2009\n3         42.02638      38.81620        6.844734             2009\n4         45.65676      40.92004        6.069454             2009\n5         46.84089      42.33184        3.726098             2009\n6         49.02208      43.95631        3.057876             2009\n7         45.11649      40.92722        4.341786             2009\n8         43.58576      40.77325        5.365788             2009\n9         44.82594      41.59978        7.870127             2009\n10        42.92745      42.23545        6.316175             2009\n11        44.21714      40.57082        4.068708             2009\n12        47.57171      43.68125        5.556625             2009\n13        48.86765      43.39600        4.838600             2009\n14        47.43805      42.32751        2.207659             2009\n\nsum(is.na(new_data))\n\n[1] 429\n\nanyNA(new_data)\n\n[1] TRUE",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#soru-4-kod-oluşturulurken-chatgptden-yardım-alınmıştır.",
-    "href": "portfolyo/calisma1.html#soru-4-kod-oluşturulurken-chatgptden-yardım-alınmıştır.",
-    "title": "Çalışma 1",
-    "section": "Soru 4 / Kod oluşturulurken Chatgpt’den yardım alınmıştır.",
-    "text": "Soru 4 / Kod oluşturulurken Chatgpt’den yardım alınmıştır.\n\nlibrary(dslabs)\n\ndata(polls_us_election_2016)\n\ndata &lt;- polls_us_election_2016\n\nmy_first &lt;- \"Sarper\"\nmy_birth_year &lt;- 1995\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 14\n\nif (k %% 2 == 0) {\n  head(data, k)\n} else {\n  tail(data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00               NA\n2          lv           38.03         35.69            5.46               NA\n3          lv           42.00         39.00            6.00               NA\n4          lv           45.00         41.00            5.00               NA\n5          rv           47.00         43.00            3.00               NA\n6          lv           48.00         44.00            3.00               NA\n7          lv           45.00         41.00            5.00               NA\n8          lv           44.00         40.00            6.00               NA\n9          lv           46.00         44.00            6.00               NA\n10         lv           41.20         42.70            7.10               NA\n11         lv           44.00         41.00            4.00               NA\n12         lv           48.00         44.00            6.00               NA\n13         lv           50.00         44.00            4.00               NA\n14         lv           48.00         43.00            1.00               NA\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221               NA\n2         43.34557      41.21439        5.175792               NA\n3         42.02638      38.81620        6.844734               NA\n4         45.65676      40.92004        6.069454               NA\n5         46.84089      42.33184        3.726098               NA\n6         49.02208      43.95631        3.057876               NA\n7         45.11649      40.92722        4.341786               NA\n8         43.58576      40.77325        5.365788               NA\n9         44.82594      41.59978        7.870127               NA\n10        42.92745      42.23545        6.316175               NA\n11        44.21714      40.57082        4.068708               NA\n12        47.57171      43.68125        5.556625               NA\n13        48.86765      43.39600        4.838600               NA\n14        47.43805      42.32751        2.207659               NA\n\nsum(is.na(data))\n\n[1] 11604\n\nsort(colSums(is.na(data)), decreasing = TRUE)[1:8]\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\nnew_data &lt;- data\n\nfor(i in 1:ncol(new_data)){\n  \n  if(is.numeric(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n  }\n  \n  if(is.character(new_data[[i]]) || is.factor(new_data[[i]])){\n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n  }\n}\n\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\nWarning in `[&lt;-.factor`(`*tmp*`, is.na(new_data[[i]]), value = \"Sarper_14\"):\ninvalid factor level, NA generated\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00             2009\n2          lv           38.03         35.69            5.46             2009\n3          lv           42.00         39.00            6.00             2009\n4          lv           45.00         41.00            5.00             2009\n5          rv           47.00         43.00            3.00             2009\n6          lv           48.00         44.00            3.00             2009\n7          lv           45.00         41.00            5.00             2009\n8          lv           44.00         40.00            6.00             2009\n9          lv           46.00         44.00            6.00             2009\n10         lv           41.20         42.70            7.10             2009\n11         lv           44.00         41.00            4.00             2009\n12         lv           48.00         44.00            6.00             2009\n13         lv           50.00         44.00            4.00             2009\n14         lv           48.00         43.00            1.00             2009\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221             2009\n2         43.34557      41.21439        5.175792             2009\n3         42.02638      38.81620        6.844734             2009\n4         45.65676      40.92004        6.069454             2009\n5         46.84089      42.33184        3.726098             2009\n6         49.02208      43.95631        3.057876             2009\n7         45.11649      40.92722        4.341786             2009\n8         43.58576      40.77325        5.365788             2009\n9         44.82594      41.59978        7.870127             2009\n10        42.92745      42.23545        6.316175             2009\n11        44.21714      40.57082        4.068708             2009\n12        47.57171      43.68125        5.556625             2009\n13        48.86765      43.39600        4.838600             2009\n14        47.43805      42.32751        2.207659             2009\n\nsum(is.na(new_data))\n\n[1] 429\n\nanyNA(new_data)\n\n[1] TRUE",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#soru-4",
-    "href": "portfolyo/calisma1.html#soru-4",
-    "title": "Çalışma 1",
-    "section": "Soru 4",
-    "text": "Soru 4\nKod oluşturulurken Chatgpt’den yardım alınmıştır.\n\nlibrary(dslabs)\n\ndata(polls_us_election_2016)\n\ndata &lt;- polls_us_election_2016\n\nmy_first &lt;- \"Sarper\"\nmy_birth_year &lt;- 1995\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 14\n\nif (k %% 2 == 0) {\n  head(data, k)\n} else {\n  tail(data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster grade samplesize\n1                                    ABC News/Washington Post    A+       2220\n2                                     Google Consumer Surveys     B      26574\n3                                                       Ipsos    A-       2195\n4                                                      YouGov     B       3677\n5                                            Gravis Marketing    B-      16639\n6  Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                     CBS News/New York Times    A-       1426\n8                                NBC News/Wall Street Journal    A-       1282\n9                                                    Zia Poll  &lt;NA&gt;       8439\n10                                                   IBD/TIPP    A-       1107\n11                                           Selzer & Company    A+        799\n12                                          Angus Reid Global    A-       1151\n13                                        Monmouth University    A+        748\n14                                      Public Policy Polling    B+       1238\n   population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1          lv           47.00         43.00            4.00               NA\n2          lv           38.03         35.69            5.46               NA\n3          lv           42.00         39.00            6.00               NA\n4          lv           45.00         41.00            5.00               NA\n5          rv           47.00         43.00            3.00               NA\n6          lv           48.00         44.00            3.00               NA\n7          lv           45.00         41.00            5.00               NA\n8          lv           44.00         40.00            6.00               NA\n9          lv           46.00         44.00            6.00               NA\n10         lv           41.20         42.70            7.10               NA\n11         lv           44.00         41.00            4.00               NA\n12         lv           48.00         44.00            6.00               NA\n13         lv           50.00         44.00            4.00               NA\n14         lv           48.00         43.00            1.00               NA\n   adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1         45.20163      41.72430        4.626221               NA\n2         43.34557      41.21439        5.175792               NA\n3         42.02638      38.81620        6.844734               NA\n4         45.65676      40.92004        6.069454               NA\n5         46.84089      42.33184        3.726098               NA\n6         49.02208      43.95631        3.057876               NA\n7         45.11649      40.92722        4.341786               NA\n8         43.58576      40.77325        5.365788               NA\n9         44.82594      41.59978        7.870127               NA\n10        42.92745      42.23545        6.316175               NA\n11        44.21714      40.57082        4.068708               NA\n12        47.57171      43.68125        5.556625               NA\n13        48.86765      43.39600        4.838600               NA\n14        47.43805      42.32751        2.207659               NA\n\nsum(is.na(data))\n\n[1] 11604\n\nsort(colSums(is.na(data)), decreasing = TRUE)[1:8]\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\nnew_data &lt;- data\n\nfor(i in 1:ncol(new_data)){\n  \n  if(is.numeric(new_data[[i]])){\n    \n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n    \n  } else {\n    \n    new_data[[i]] &lt;- as.character(new_data[[i]])\n    \n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n  }\n}\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n        state  startdate    enddate\n1        U.S. 2016-11-03 2016-11-06\n2        U.S. 2016-11-01 2016-11-07\n3        U.S. 2016-11-02 2016-11-06\n4        U.S. 2016-11-04 2016-11-07\n5        U.S. 2016-11-03 2016-11-06\n6        U.S. 2016-11-03 2016-11-06\n7        U.S. 2016-11-02 2016-11-06\n8        U.S. 2016-11-03 2016-11-05\n9  New Mexico 2016-11-06 2016-11-06\n10       U.S. 2016-11-04 2016-11-07\n11       U.S. 2016-11-04 2016-11-06\n12       U.S. 2016-11-01 2016-11-04\n13       U.S. 2016-11-03 2016-11-06\n14   Virginia 2016-11-03 2016-11-04\n                                                     pollster     grade\n1                                    ABC News/Washington Post        A+\n2                                     Google Consumer Surveys         B\n3                                                       Ipsos        A-\n4                                                      YouGov         B\n5                                            Gravis Marketing        B-\n6  Fox News/Anderson Robbins Research/Shaw & Company Research         A\n7                                     CBS News/New York Times        A-\n8                                NBC News/Wall Street Journal        A-\n9                                                    Zia Poll Sarper_14\n10                                                   IBD/TIPP        A-\n11                                           Selzer & Company        A+\n12                                          Angus Reid Global        A-\n13                                        Monmouth University        A+\n14                                      Public Policy Polling        B+\n   samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n1        2220         lv           47.00         43.00            4.00\n2       26574         lv           38.03         35.69            5.46\n3        2195         lv           42.00         39.00            6.00\n4        3677         lv           45.00         41.00            5.00\n5       16639         rv           47.00         43.00            3.00\n6        1295         lv           48.00         44.00            3.00\n7        1426         lv           45.00         41.00            5.00\n8        1282         lv           44.00         40.00            6.00\n9        8439         lv           46.00         44.00            6.00\n10       1107         lv           41.20         42.70            7.10\n11        799         lv           44.00         41.00            4.00\n12       1151         lv           48.00         44.00            6.00\n13        748         lv           50.00         44.00            4.00\n14       1238         lv           48.00         43.00            1.00\n   rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n1              2009        45.20163      41.72430        4.626221\n2              2009        43.34557      41.21439        5.175792\n3              2009        42.02638      38.81620        6.844734\n4              2009        45.65676      40.92004        6.069454\n5              2009        46.84089      42.33184        3.726098\n6              2009        49.02208      43.95631        3.057876\n7              2009        45.11649      40.92722        4.341786\n8              2009        43.58576      40.77325        5.365788\n9              2009        44.82594      41.59978        7.870127\n10             2009        42.92745      42.23545        6.316175\n11             2009        44.21714      40.57082        4.068708\n12             2009        47.57171      43.68125        5.556625\n13             2009        48.86765      43.39600        4.838600\n14             2009        47.43805      42.32751        2.207659\n   adjpoll_mcmullin\n1              2009\n2              2009\n3              2009\n4              2009\n5              2009\n6              2009\n7              2009\n8              2009\n9              2009\n10             2009\n11             2009\n12             2009\n13             2009\n14             2009\n\nsum(is.na(new_data))\n\n[1] 0\n\nanyNA(new_data)\n\n[1] FALSE",
-    "crumbs": [
-      "Çalışma 1"
-    ]
   }
 ]
