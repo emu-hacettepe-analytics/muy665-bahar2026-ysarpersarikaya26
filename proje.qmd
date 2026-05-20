@@ -10,7 +10,7 @@ execute:
   message: false
 ---
 
-Proje raporunun güncel web sürümüne [buradan erişebilirsiniz](https://emu-hacettepe-analytics.github.io/muy665-bahar2026-seherseven/proje.html).
+Proje raporunun güncel web sürümüne [buradan erişebilirsiniz](https://emu-hacettepe-analytics.github.io/muy665-bahar2026-ysarpersarikaya26/proje.html).
 
 # Proje Genel Bakış ve Kapsamı
 
