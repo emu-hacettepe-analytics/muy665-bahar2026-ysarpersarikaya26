@@ -46,65 +46,72 @@
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "",
-    "text": "Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
+    "text": "Proje raporunun güncel web sürümüne buradan erişebilirsiniz."
   },
   {
     "objectID": "proje.html#veri-kaynağı",
     "href": "proje.html#veri-kaynağı",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "2.1 Veri Kaynağı",
-    "text": "2.1 Veri Kaynağı\nxxxxxx"
+    "text": "2.1 Veri Kaynağı\nÇalışmada kullanılan veri seti Mendeley Data platformu üzerinden erişilen ve EPİAŞ Şeffaflık Platformu kaynaklı verilerden oluşturulan Türkiye elektrik piyasası veri setidir.\nVeri seti; saatlik elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı değişkenlerini içermektedir. Bu nedenle çalışma, Türkiye elektrik piyasasına ilişkin gerçek dünya verileri üzerinde yürütülmüştür.\nVeri kaynağı: https://data.mendeley.com/datasets/7z3fndwnjv\nEPİAŞ Şeffaflık Platformu: https://seffaflik.epias.com.tr/"
   },
   {
     "objectID": "proje.html#veri-hakkında-genel-bilgiler",
     "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nxxxxxx"
+    "text": "2.2 Veri Hakkında Genel Bilgiler\nVeri seti Türkiye elektrik piyasasına ilişkin saatlik gözlemlerden oluşmaktadır. Veri içerisinde tarih-saat bilgisi, tahmini elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı gibi değişkenler bulunmaktadır.\nÇalışmada özellikle elektrik talebi, toplam üretim ve kaynak bazlı üretim değişkenleri kullanılmıştır. Veri setinin zaman boyutuna sahip olması, tüketim eğilimlerinin ve üretim kaynaklarının dönemsel olarak incelenmesine olanak sağlamaktadır."
   },
   {
     "objectID": "proje.html#tercih-sebebi",
     "href": "proje.html#tercih-sebebi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "2.3 Tercih Sebebi",
-    "text": "2.3 Tercih Sebebi\nxxxxxx"
+    "text": "2.3 Tercih Sebebi\nEnerji sektörü ekonomik faaliyetlerin temel göstergelerinden biridir. Elektrik üretim ve tüketim verileri; ekonomik büyüme, sanayi faaliyetleri ve mevsimsel değişimler hakkında önemli bilgiler sunmaktadır.\nBu veri seti;\n\ngerçek dünya verisi içermesi,\nTürkiye elektrik piyasasıyla doğrudan ilişkili olması,\nsaatlik gözlemlerden oluşması,\nüretim, talep ve fiyat değişkenlerini birlikte içermesi,\nzaman serisi analizi ve veri görselleştirme için uygun olması\n\nnedenleriyle tercih edilmiştir."
   },
   {
     "objectID": "proje.html#ön-işleme",
     "href": "proje.html#ön-işleme",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "2.4 Ön İşleme",
-    "text": "2.4 Ön İşleme\nxxxxxx"
+    "text": "2.4 Ön İşleme\nAnaliz öncesinde veri seti üzerinde ön işleme çalışmaları gerçekleştirilmiştir.\nBu kapsamda:\n\nveri seti R ortamına aktarılmış,\ntarih ve saat değişkenleri analiz için uygun formata dönüştürülmüş,\nelektrik talebini temsil eden değişken belirlenmiş,\nüretim kaynaklarına ilişkin değişkenler incelenmiş,\nveri setinin genel yapısı ve temel istatistikleri kontrol edilmiştir."
   },
   {
     "objectID": "proje.html#keşifsel-veri-analizi",
     "href": "proje.html#keşifsel-veri-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "3.1 Keşifsel Veri Analizi",
-    "text": "3.1 Keşifsel Veri Analizi\nxxxxxx"
+    "text": "3.1 Keşifsel Veri Analizi\nKeşifsel veri analizi kapsamında veri setinin genel yapısı incelenmiştir.\nDeğişkenlerin dağılımları, temel istatistiksel özellikleri ve zaman içerisindeki değişimleri değerlendirilmiştir. Ayrıca enerji üretim türlerinin toplam üretim içerisindeki payları analiz edilmiştir.\n\n\nCode\nplot(\n  energy_data$zaman,\n  energy_data$tuketim,\n  type = \"l\",\n  col = \"blue\",\n  main = \"Türkiye Elektrik Talebi Zaman Serisi\",\n  xlab = \"Tarih\",\n  ylab = \"Elektrik Talebi\"\n)\n\n\n\n\n\n\n\n\n\nZaman serisi grafiği incelendiğinde, elektrik talebinin yıl içerisinde belirgin dalgalanmalar gösterdiği görülmektedir. Bu durum, elektrik talebinin durağan bir yapıya sahip olmadığını ve dönemsel koşullara bağlı olarak değişebildiğini ortaya koymaktadır. Özellikle kısa aralıklarla gerçekleşen yükseliş ve düşüşler, talebin yalnızca genel trend üzerinden değil, saatlik ve dönemsel değişimler dikkate alınarak analiz edilmesi gerektiğini göstermektedir. Bu bulgu, enerji planlaması açısından talep tahmininin ve esnek üretim kapasitesinin önemini desteklemektedir.\n\n\nCode\nkaynak_uretim &lt;- colSums(\n  energy_data[, c(\n    \"naturalgas_market\",\n    \"wind_market\",\n    \"lignite_market\",\n    \"importedcoal_market\",\n    \"geothermal_market\",\n    \"solar_resm\",\n    \"biomass_resm\"\n  )],\n  na.rm = TRUE\n)\n\nbarplot(\n  kaynak_uretim,\n  las = 2,\n  col = \"lightblue\",\n  main = \"Kaynak Bazlı Toplam Elektrik Üretimi\",\n  ylab = \"Toplam Üretim\"\n)\n\n\n\n\n\n\n\n\n\nKaynak bazlı üretim dağılımı, elektrik üretiminin farklı enerji kaynakları arasında nasıl paylaşıldığını göstermektedir. Grafik, üretim portföyünde geleneksel kaynakların önemli bir yer tuttuğunu; bunun yanında rüzgâr, güneş, jeotermal ve biyokütle gibi yenilenebilir kaynakların da üretim yapısına katkı sunduğunu ortaya koymaktadır.\nBu dağılım, enerji arz güvenliği ve sürdürülebilirlik açısından önemlidir. Çünkü elektrik üretiminde kaynak çeşitliliğinin artması, piyasanın tek bir üretim türüne bağımlılığını azaltırken yenilenebilir kaynakların payının izlenmesi enerji dönüşümü açısından anlamlı bir gösterge sunmaktadır."
   },
   {
     "objectID": "proje.html#trend-analizi",
     "href": "proje.html#trend-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "3.2 Trend Analizi",
-    "text": "3.2 Trend Analizi\nxxxxxx"
+    "text": "3.2 Trend Analizi\nTrend analizi kapsamında elektrik üretim ve tüketim değerlerinin zaman içerisindeki değişimleri incelenmiştir.\nBu bölümde özellikle:\n\nelektrik talebinin zaman içerisindeki değişimi,\naylık ortalama talep düzeyleri,\ndönemsel dalgalanmalar,\ntalep eğiliminin genel yönü\n\ndeğerlendirilmiştir.\n\n\nCode\nenergy_data$ay &lt;- format(energy_data$tarih, \"%Y-%m\")\n\naylik_tuketim &lt;- aggregate(tuketim ~ ay, data = energy_data, FUN = mean)\n\nplot(\n  as.Date(paste0(aylik_tuketim$ay, \"-01\")),\n  aylik_tuketim$tuketim,\n  type = \"b\",\n  col = \"darkgreen\",\n  main = \"Aylık Ortalama Elektrik Talebi\",\n  xlab = \"Ay\",\n  ylab = \"Ortalama Elektrik Talebi\"\n)\n\n\n\n\n\n\n\n\n\nAylık ortalama elektrik talebi değerleri, elektrik talebindeki saatlik dalgalanmaların arındırılarak daha bütüncül bir eğilimin izlenmesini sağlamaktadır. Bu grafik, talebin yıl boyunca tekdüze bir seyir izlemediğini; belirli dönemlerde yoğunlaşan ve zayıflayan bir talep yapısına sahip olduğunu göstermektedir. Bu nedenle aylık ortalamalar, saatlik veriye kıyasla daha stratejik bir değerlendirme imkânı sunmaktadır.\nElde edilen görünüm, elektrik talebinin zaman boyutunda değişkenlik gösterdiğini ve enerji talebinin dönemsel koşullarla birlikte ele alınması gerektiğini ortaya koymaktadır. Bu bulgu, enerji arz güvenliği, üretim kapasitesi planlaması ve talep tahmini çalışmalarında zaman bazlı analizlerin kritik rolünü vurgulamaktadır."
   },
   {
     "objectID": "proje.html#model-uydurma",
     "href": "proje.html#model-uydurma",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
     "section": "3.3 Model Uydurma",
-    "text": "3.3 Model Uydurma\nxxxxxx"
+    "text": "3.3 Model Uydurma\nElektrik talebi verilerindeki eğilimleri incelemek amacıyla basit doğrusal modelleme yaklaşımı kullanılmıştır.\nModel yardımıyla elektrik talebinin zaman içerisindeki genel eğilimi değerlendirilmiştir.\n\n\nCode\nenergy_data$gun_no &lt;- as.numeric(energy_data$tarih - min(energy_data$tarih)) + 1\n\nmodel_tuketim &lt;- lm(tuketim ~ gun_no, data = energy_data)\n\nplot(\n  energy_data$gun_no,\n  energy_data$tuketim,\n  col = \"gray\",\n  pch = 16,\n  main = \"Elektrik Talebi İçin Doğrusal Trend Modeli\",\n  xlab = \"Gün Sırası\",\n  ylab = \"Elektrik Talebi\"\n)\n\nabline(model_tuketim, col = \"red\", lwd = 2)\n\n\n\n\n\n\n\n\n\nCode\nsummary(model_tuketim)\n\n\n\nCall:\nlm(formula = tuketim ~ gun_no, data = energy_data)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-31789  -3952    375   3608  14825 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 3.033e+04  4.482e+01  676.80   &lt;2e-16 ***\ngun_no      1.730e+00  3.540e-02   48.86   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 5138 on 52602 degrees of freedom\nMultiple R-squared:  0.04341,   Adjusted R-squared:  0.04339 \nF-statistic:  2387 on 1 and 52602 DF,  p-value: &lt; 2.2e-16\n\n\nDoğrusal trend modeli, elektrik talebinin zaman içerisindeki genel yönünü değerlendirmek amacıyla kullanılmıştır. Saatlik elektrik talebi değerleri kısa dönemli dalgalanmalar içerdiği için tek başına tüm yapıyı açıklamakta sınırlı kalmaktadır; ancak model çizgisi, yıl geneline yayılan ortalama eğilimi görselleştirmeye yardımcı olmaktadır.\nModel çıktısı, elektrik talebi değerlerinin yalnızca zaman değişkeniyle tamamen açıklanamayacağını; saatlik talep değişimlerinin farklı dış faktörlerden de etkilenebileceğini göstermektedir. Bu nedenle doğrusal model, bu çalışmada kesin bir tahmin aracı olarak değil, elektrik talebindeki genel eğilimi yorumlamak için destekleyici bir analiz yöntemi olarak kullanılmıştır."
+  },
+  {
+    "objectID": "proje.html#hafta-içi-ve-hafta-sonu-elektrik-talebi",
+    "href": "proje.html#hafta-içi-ve-hafta-sonu-elektrik-talebi",
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
+    "section": "3.4 Hafta İçi ve Hafta Sonu Elektrik Talebi",
+    "text": "3.4 Hafta İçi ve Hafta Sonu Elektrik Talebi\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(lubridate)\n\nenergy_data$gun &lt;- weekdays(as.Date(energy_data$Datetime))\n\nenergy_data$kategori &lt;- ifelse(\n  energy_data$gun %in% c(\"Saturday\", \"Sunday\"),\n  \"Hafta Sonu\",\n  \"Hafta İçi\"\n)\n\nhaftalik_ortalama &lt;- energy_data %&gt;%\n  group_by(kategori) %&gt;%\n  summarise(\n    ortalama_tuketim = mean(total, na.rm = TRUE)\n  )\n\nggplot(\n  haftalik_ortalama,\n  aes(\n    x = kategori,\n    y = ortalama_tuketim,\n    fill = kategori\n  )\n) +\n  geom_bar(stat = \"identity\") +\n  labs(\n    title = \"Hafta İçi ve Hafta Sonu Ortalama Elektrik Talebi\",\n    x = \"Kategori\",\n    y = \"Ortalama Elektrik Talebi\"\n  )\n\n\n\n\n\n\n\n\n\nGrafik incelendiğinde hafta içi elektrik talebinin hafta sonuna göre daha yüksek olduğu görülmektedir. Bu durum sanayi faaliyetleri ve ticari kullanımın enerji tüketimi üzerindeki etkisini göstermektedir."
   },
   {
     "objectID": "proje.html#sonuçlar",
     "href": "proje.html#sonuçlar",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "3.4 Sonuçlar",
-    "text": "3.4 Sonuçlar\nxxxxxx"
+    "title": "Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi",
+    "section": "3.5 Sonuçlar",
+    "text": "3.5 Sonuçlar\nAnaliz sonuçları, elektrik talebinin yıl içerisinde sabit bir yapı göstermediğini ve zaman içinde belirgin dalgalanmalar içerdiğini ortaya koymaktadır. Saatlik elektrik talebi grafiği kısa dönemli değişimleri görünür kılarken, aylık ortalama elektrik talebi grafiği bu değişimleri daha okunabilir hale getirerek dönemsel eğilimlerin değerlendirilmesine imkân sağlamıştır.\nDoğrusal trend modeli ise elektrik talebinde yıl genelinde sınırlı bir yönelim olduğunu göstermektedir. Ancak saatlik elektrik talebi değerlerindeki yüksek oynaklık, elektrik talebinin yalnızca zaman değişkeniyle açıklanamayacağını; mevsimsel koşullar, ekonomik faaliyetler, saatlik kullanım alışkanlıkları ve üretim planlama dinamikleri gibi farklı faktörlerin de dikkate alınması gerektiğini göstermektedir."
   },
   {
     "objectID": "portfolyo.html",

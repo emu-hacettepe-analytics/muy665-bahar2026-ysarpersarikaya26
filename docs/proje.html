@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Proje X (proje adını yazınız) – Sarper SARIKAYA’nın İş Analitik Dersi Labı</title>
+<title>Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi – Sarper SARIKAYA’nın İş Analitik Dersi Labı</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -317,9 +352,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#keşifsel-veri-analizi" id="toc-keşifsel-veri-analizi" class="nav-link" data-scroll-target="#keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</a></li>
   <li><a href="#trend-analizi" id="toc-trend-analizi" class="nav-link" data-scroll-target="#trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</a></li>
   <li><a href="#model-uydurma" id="toc-model-uydurma" class="nav-link" data-scroll-target="#model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</a></li>
-  <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</a></li>
+  <li><a href="#hafta-içi-ve-hafta-sonu-elektrik-talebi" id="toc-hafta-içi-ve-hafta-sonu-elektrik-talebi" class="nav-link" data-scroll-target="#hafta-içi-ve-hafta-sonu-elektrik-talebi"><span class="header-section-number">3.4</span> Hafta İçi ve Hafta Sonu Elektrik Talebi</a></li>
+  <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.5</span> Sonuçlar</a></li>
   </ul></li>
   <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</a></li>
+  <li><a href="#yapay-zekâ-kullanım-beyanı" id="toc-yapay-zekâ-kullanım-beyanı" class="nav-link" data-scroll-target="#yapay-zekâ-kullanım-beyanı"><span class="header-section-number">5</span> Yapay Zekâ Kullanım Beyanı</a></li>
   </ul>
 </nav>
 </nav>
@@ -333,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proje X (proje adını yazınız)</h1>
+<div class="quarto-title-block"><div><h1 class="title">Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -350,56 +387,340 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.</strong></p>
-<p>(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)</p>
+<p>Proje raporunun güncel web sürümüne <a href="https://emu-hacettepe-analytics.github.io/muy665-bahar2026-seherseven/proje.html">buradan erişebilirsiniz</a>.</p>
 <section id="proje-genel-bakış-ve-kapsamı" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Proje Genel Bakış ve Kapsamı</h1>
-<p>xxxxxx</p>
+<p>Bu projede Türkiye’nin elektrik üretim ve tüketim verileri EPİAŞ Şeffaflık Platformu kullanılarak analiz edilmiştir.</p>
+<p>Çalışmanın amacı, elektrik üretim ve tüketim eğilimlerini incelemek, enerji kaynaklarının dağılımını analiz etmek ve yenilenebilir enerji kullanımındaki değişimleri değerlendirmektir.</p>
+<p>Proje kapsamında zaman serisi analizi, keşifsel veri analizi (EDA), veri görselleştirme ve trend incelemeleri gerçekleştirilmiştir.</p>
 </section>
 <section id="veri" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Veri</h1>
-<p>xxxxxx</p>
+<p>Veri setinde:</p>
+<ul>
+<li>elektrik üretim miktarları,</li>
+<li>elektrik talebi değerleri,</li>
+<li>enerji kaynak türleri,</li>
+<li>tarih ve saat bilgileri,</li>
+<li>piyasa fiyatı değişkenleri</li>
+</ul>
+<p>yer almaktadır.</p>
 <section id="veri-kaynağı" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="veri-kaynağı"><span class="header-section-number">2.1</span> Veri Kaynağı</h2>
-<p>xxxxxx</p>
+<p>Çalışmada kullanılan veri seti Mendeley Data platformu üzerinden erişilen ve EPİAŞ Şeffaflık Platformu kaynaklı verilerden oluşturulan Türkiye elektrik piyasası veri setidir.</p>
+<p>Veri seti; saatlik elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı değişkenlerini içermektedir. Bu nedenle çalışma, Türkiye elektrik piyasasına ilişkin gerçek dünya verileri üzerinde yürütülmüştür.</p>
+<p>Veri kaynağı: https://data.mendeley.com/datasets/7z3fndwnjv</p>
+<p>EPİAŞ Şeffaflık Platformu: https://seffaflik.epias.com.tr/</p>
 </section>
 <section id="veri-hakkında-genel-bilgiler" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</h2>
-<p>xxxxxx</p>
+<p>Veri seti Türkiye elektrik piyasasına ilişkin saatlik gözlemlerden oluşmaktadır. Veri içerisinde tarih-saat bilgisi, tahmini elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı gibi değişkenler bulunmaktadır.</p>
+<p>Çalışmada özellikle elektrik talebi, toplam üretim ve kaynak bazlı üretim değişkenleri kullanılmıştır. Veri setinin zaman boyutuna sahip olması, tüketim eğilimlerinin ve üretim kaynaklarının dönemsel olarak incelenmesine olanak sağlamaktadır.</p>
 </section>
 <section id="tercih-sebebi" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tercih-sebebi"><span class="header-section-number">2.3</span> Tercih Sebebi</h2>
-<p>xxxxxx</p>
+<p>Enerji sektörü ekonomik faaliyetlerin temel göstergelerinden biridir. Elektrik üretim ve tüketim verileri; ekonomik büyüme, sanayi faaliyetleri ve mevsimsel değişimler hakkında önemli bilgiler sunmaktadır.</p>
+<p>Bu veri seti;</p>
+<ul>
+<li>gerçek dünya verisi içermesi,</li>
+<li>Türkiye elektrik piyasasıyla doğrudan ilişkili olması,</li>
+<li>saatlik gözlemlerden oluşması,</li>
+<li>üretim, talep ve fiyat değişkenlerini birlikte içermesi,</li>
+<li>zaman serisi analizi ve veri görselleştirme için uygun olması</li>
+</ul>
+<p>nedenleriyle tercih edilmiştir.</p>
 </section>
 <section id="ön-işleme" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="ön-işleme"><span class="header-section-number">2.4</span> Ön İşleme</h2>
-<p>xxxxxx</p>
+<p>Analiz öncesinde veri seti üzerinde ön işleme çalışmaları gerçekleştirilmiştir.</p>
+<p>Bu kapsamda:</p>
+<ul>
+<li>veri seti R ortamına aktarılmış,</li>
+<li>tarih ve saat değişkenleri analiz için uygun formata dönüştürülmüş,</li>
+<li>elektrik talebini temsil eden değişken belirlenmiş,</li>
+<li>üretim kaynaklarına ilişkin değişkenler incelenmiş,</li>
+<li>veri setinin genel yapısı ve temel istatistikleri kontrol edilmiştir.</li>
+</ul>
 </section>
 </section>
 <section id="analiz" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Analiz</h1>
-<p>xxxxxx</p>
+<p>Bu bölümde veri seti üzerinde keşifsel veri analizi, trend analizi ve görselleştirme çalışmaları gerçekleştirilmiştir.</p>
+<p>Elektrik üretim ve tüketim değişimleri incelenmiş, enerji kaynaklarının dağılımı değerlendirilmiş ve zaman içerisindeki değişimler analiz edilmiştir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>energy_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data_final.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>zaman <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>Datetime,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%Y-%m-%d %H:%M:%S"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">tz =</span> <span class="st">"UTC"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>tarih <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(energy_data<span class="sc">$</span>zaman)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>tuketim <span class="ot">&lt;-</span> energy_data<span class="sc">$</span>est_demand</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(energy_data[, <span class="fu">c</span>(<span class="st">"zaman"</span>, <span class="st">"tarih"</span>, <span class="st">"tuketim"</span>, <span class="st">"total"</span>, <span class="st">"naturalgas_market"</span>, <span class="st">"wind_market"</span>, <span class="st">"solar_resm"</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                zaman      tarih tuketim    total naturalgas_market wind_market
+1 2015-01-01 00:00:00 2015-01-01   24200 19299.95           8219.36      351.39
+2 2015-01-01 01:00:00 2015-01-01   23100 18035.66           7503.74      350.10
+3 2015-01-01 02:00:00 2015-01-01   21800 18019.73           7495.33      339.53
+4 2015-01-01 03:00:00 2015-01-01   21000 17946.54           7500.93      341.47
+5 2015-01-01 04:00:00 2015-01-01   20300 17894.16           7451.26      346.34
+6 2015-01-01 05:00:00 2015-01-01   20800 17823.23           7417.74      362.09
+  solar_resm
+1          0
+2          0
+3          0
+4          0
+5          0
+6          0</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(energy_data<span class="sc">$</span>tuketim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0   28300   32400   32232   35900   46500 </code></pre>
+</div>
+</div>
 <section id="keşifsel-veri-analizi" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</h2>
-<p>xxxxxx</p>
+<p>Keşifsel veri analizi kapsamında veri setinin genel yapısı incelenmiştir.</p>
+<p>Değişkenlerin dağılımları, temel istatistiksel özellikleri ve zaman içerisindeki değişimleri değerlendirilmiştir. Ayrıca enerji üretim türlerinin toplam üretim içerisindeki payları analiz edilmiştir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>zaman,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>tuketim,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Türkiye Elektrik Talebi Zaman Serisi"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Tarih"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Elektrik Talebi"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proje_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Zaman serisi grafiği incelendiğinde, elektrik talebinin yıl içerisinde belirgin dalgalanmalar gösterdiği görülmektedir. Bu durum, elektrik talebinin durağan bir yapıya sahip olmadığını ve dönemsel koşullara bağlı olarak değişebildiğini ortaya koymaktadır. Özellikle kısa aralıklarla gerçekleşen yükseliş ve düşüşler, talebin yalnızca genel trend üzerinden değil, saatlik ve dönemsel değişimler dikkate alınarak analiz edilmesi gerektiğini göstermektedir. Bu bulgu, enerji planlaması açısından talep tahmininin ve esnek üretim kapasitesinin önemini desteklemektedir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>kaynak_uretim <span class="ot">&lt;-</span> <span class="fu">colSums</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  energy_data[, <span class="fu">c</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"naturalgas_market"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"wind_market"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lignite_market"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"importedcoal_market"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"geothermal_market"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"solar_resm"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"biomass_resm"</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  )],</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  kaynak_uretim,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Kaynak Bazlı Toplam Elektrik Üretimi"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Toplam Üretim"</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proje_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Kaynak bazlı üretim dağılımı, elektrik üretiminin farklı enerji kaynakları arasında nasıl paylaşıldığını göstermektedir. Grafik, üretim portföyünde geleneksel kaynakların önemli bir yer tuttuğunu; bunun yanında rüzgâr, güneş, jeotermal ve biyokütle gibi yenilenebilir kaynakların da üretim yapısına katkı sunduğunu ortaya koymaktadır.</p>
+<p>Bu dağılım, enerji arz güvenliği ve sürdürülebilirlik açısından önemlidir. Çünkü elektrik üretiminde kaynak çeşitliliğinin artması, piyasanın tek bir üretim türüne bağımlılığını azaltırken yenilenebilir kaynakların payının izlenmesi enerji dönüşümü açısından anlamlı bir gösterge sunmaktadır.</p>
 </section>
 <section id="trend-analizi" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</h2>
-<p>xxxxxx</p>
+<p>Trend analizi kapsamında elektrik üretim ve tüketim değerlerinin zaman içerisindeki değişimleri incelenmiştir.</p>
+<p>Bu bölümde özellikle:</p>
+<ul>
+<li>elektrik talebinin zaman içerisindeki değişimi,</li>
+<li>aylık ortalama talep düzeyleri,</li>
+<li>dönemsel dalgalanmalar,</li>
+<li>talep eğiliminin genel yönü</li>
+</ul>
+<p>değerlendirilmiştir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>ay <span class="ot">&lt;-</span> <span class="fu">format</span>(energy_data<span class="sc">$</span>tarih, <span class="st">"%Y-%m"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>aylik_tuketim <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(tuketim <span class="sc">~</span> ay, <span class="at">data =</span> energy_data, <span class="at">FUN =</span> mean)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.Date</span>(<span class="fu">paste0</span>(aylik_tuketim<span class="sc">$</span>ay, <span class="st">"-01"</span>)),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  aylik_tuketim<span class="sc">$</span>tuketim,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"b"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"darkgreen"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Aylık Ortalama Elektrik Talebi"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Ay"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Ortalama Elektrik Talebi"</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proje_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Aylık ortalama elektrik talebi değerleri, elektrik talebindeki saatlik dalgalanmaların arındırılarak daha bütüncül bir eğilimin izlenmesini sağlamaktadır. Bu grafik, talebin yıl boyunca tekdüze bir seyir izlemediğini; belirli dönemlerde yoğunlaşan ve zayıflayan bir talep yapısına sahip olduğunu göstermektedir. Bu nedenle aylık ortalamalar, saatlik veriye kıyasla daha stratejik bir değerlendirme imkânı sunmaktadır.</p>
+<p>Elde edilen görünüm, elektrik talebinin zaman boyutunda değişkenlik gösterdiğini ve enerji talebinin dönemsel koşullarla birlikte ele alınması gerektiğini ortaya koymaktadır. Bu bulgu, enerji arz güvenliği, üretim kapasitesi planlaması ve talep tahmini çalışmalarında zaman bazlı analizlerin kritik rolünü vurgulamaktadır.</p>
 </section>
 <section id="model-uydurma" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</h2>
-<p>xxxxxx</p>
+<p>Elektrik talebi verilerindeki eğilimleri incelemek amacıyla basit doğrusal modelleme yaklaşımı kullanılmıştır.</p>
+<p>Model yardımıyla elektrik talebinin zaman içerisindeki genel eğilimi değerlendirilmiştir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>gun_no <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(energy_data<span class="sc">$</span>tarih <span class="sc">-</span> <span class="fu">min</span>(energy_data<span class="sc">$</span>tarih)) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>model_tuketim <span class="ot">&lt;-</span> <span class="fu">lm</span>(tuketim <span class="sc">~</span> gun_no, <span class="at">data =</span> energy_data)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>gun_no,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>tuketim,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"gray"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Elektrik Talebi İçin Doğrusal Trend Modeli"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Gün Sırası"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Elektrik Talebi"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(model_tuketim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proje_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_tuketim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = tuketim ~ gun_no, data = energy_data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-31789  -3952    375   3608  14825 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 3.033e+04  4.482e+01  676.80   &lt;2e-16 ***
+gun_no      1.730e+00  3.540e-02   48.86   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5138 on 52602 degrees of freedom
+Multiple R-squared:  0.04341,   Adjusted R-squared:  0.04339 
+F-statistic:  2387 on 1 and 52602 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Doğrusal trend modeli, elektrik talebinin zaman içerisindeki genel yönünü değerlendirmek amacıyla kullanılmıştır. Saatlik elektrik talebi değerleri kısa dönemli dalgalanmalar içerdiği için tek başına tüm yapıyı açıklamakta sınırlı kalmaktadır; ancak model çizgisi, yıl geneline yayılan ortalama eğilimi görselleştirmeye yardımcı olmaktadır.</p>
+<p>Model çıktısı, elektrik talebi değerlerinin yalnızca zaman değişkeniyle tamamen açıklanamayacağını; saatlik talep değişimlerinin farklı dış faktörlerden de etkilenebileceğini göstermektedir. Bu nedenle doğrusal model, bu çalışmada kesin bir tahmin aracı olarak değil, elektrik talebindeki genel eğilimi yorumlamak için destekleyici bir analiz yöntemi olarak kullanılmıştır.</p>
 </section>
-<section id="sonuçlar" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</h2>
-<p>xxxxxx</p>
+<section id="hafta-içi-ve-hafta-sonu-elektrik-talebi" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="hafta-içi-ve-hafta-sonu-elektrik-talebi"><span class="header-section-number">3.4</span> Hafta İçi ve Hafta Sonu Elektrik Talebi</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>gun <span class="ot">&lt;-</span> <span class="fu">weekdays</span>(<span class="fu">as.Date</span>(energy_data<span class="sc">$</span>Datetime))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>kategori <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>gun <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Saturday"</span>, <span class="st">"Sunday"</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hafta Sonu"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hafta İçi"</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>haftalik_ortalama <span class="ot">&lt;-</span> energy_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kategori) <span class="sc">%&gt;%</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">ortalama_tuketim =</span> <span class="fu">mean</span>(total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  haftalik_ortalama,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> kategori,</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> ortalama_tuketim,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> kategori</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Hafta İçi ve Hafta Sonu Ortalama Elektrik Talebi"</span>,</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Kategori"</span>,</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ortalama Elektrik Talebi"</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proje_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Grafik incelendiğinde hafta içi elektrik talebinin hafta sonuna göre daha yüksek olduğu görülmektedir. Bu durum sanayi faaliyetleri ve ticari kullanımın enerji tüketimi üzerindeki etkisini göstermektedir.</p>
+</section>
+<section id="sonuçlar" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="sonuçlar"><span class="header-section-number">3.5</span> Sonuçlar</h2>
+<p>Analiz sonuçları, elektrik talebinin yıl içerisinde sabit bir yapı göstermediğini ve zaman içinde belirgin dalgalanmalar içerdiğini ortaya koymaktadır. Saatlik elektrik talebi grafiği kısa dönemli değişimleri görünür kılarken, aylık ortalama elektrik talebi grafiği bu değişimleri daha okunabilir hale getirerek dönemsel eğilimlerin değerlendirilmesine imkân sağlamıştır.</p>
+<p>Doğrusal trend modeli ise elektrik talebinde yıl genelinde sınırlı bir yönelim olduğunu göstermektedir. Ancak saatlik elektrik talebi değerlerindeki yüksek oynaklık, elektrik talebinin yalnızca zaman değişkeniyle açıklanamayacağını; mevsimsel koşullar, ekonomik faaliyetler, saatlik kullanım alışkanlıkları ve üretim planlama dinamikleri gibi farklı faktörlerin de dikkate alınması gerektiğini göstermektedir.</p>
 </section>
 </section>
 <section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</h1>
-<p>xxxxxx</p>
+<p>Bu çalışma kapsamında Türkiye elektrik piyasasına ilişkin üretim ve tüketim dinamikleri zaman serisi yaklaşımıyla incelenmiştir. Analizlerde saatlik elektrik talebi değişimleri, aylık ortalama eğilimler ve basit doğrusal trend modeli birlikte değerlendirilmiştir.</p>
+<p>Çalışmanın temel çıkarımları şunlardır:</p>
+<ul>
+<li>Elektrik talebi yıl boyunca dalgalı bir yapı göstermektedir.</li>
+<li>Saatlik veriler kısa dönemli değişimleri ortaya koyarken, aylık ortalamalar genel eğilimi daha açık biçimde göstermektedir.</li>
+<li>Doğrusal model, elektrik talebindeki genel yönelimi değerlendirmek için destekleyici bir araç sunmaktadır.</li>
+<li>Elektrik talebinin yalnızca zaman değişkeniyle açıklanması sınırlıdır; daha kapsamlı analizlerde hava durumu, ekonomik faaliyet düzeyi, mevsimsel etkiler ve üretim kaynakları gibi değişkenlerin de modele dahil edilmesi gerekmektedir.</li>
+<li>Hafta içi ve hafta sonu karşılaştırmaları, elektrik talebinin günlük yaşam ve ekonomik faaliyetlerle doğrudan ilişkili olduğunu göstermektedir. Hafta içi dönemlerde gözlenen daha yüksek elektrik talebi, sanayi üretimi, ticari faaliyetler ve çalışma saatlerinin enerji tüketimi üzerindeki etkisini desteklemektedir.</li>
+</ul>
+<p>Bu bulgular, enerji planlaması, talep tahmini ve sürdürülebilir üretim stratejileri açısından zaman bazlı analizlerin önemini göstermektedir. Bu çalışma, Türkiye elektrik piyasasına ilişkin zaman bazlı eğilimlerin anlaşılması açısından temel bir çerçeve sunmaktadır. Gelecek çalışmalarda hava sıcaklığı, ekonomik göstergeler, enerji fiyatları ve tüketici davranışları gibi ek değişkenlerin modele dahil edilmesiyle daha kapsamlı tahminleme ve karar destek sistemleri geliştirilebilir. Ayrıca makine öğrenmesi yöntemlerinin kullanılması, elektrik talebinin daha yüksek doğrulukla modellenmesine katkı sağlayabilir.</p>
+</section>
+<section id="yapay-zekâ-kullanım-beyanı" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Yapay Zekâ Kullanım Beyanı</h1>
+<p>Bu proje kapsamında raporun yazım dili, analiz akışının yapılandırılması, R kodlarının düzenlenmesi ve yorumların geliştirilmesi aşamalarında ChatGPT’den destek alınmıştır. Yapay zekâ çıktıları doğrudan kopyalanmadan önce değerlendirilmiş, proje amacı ve veri setiyle uyumlu olacak şekilde düzenlenmiştir.</p>
+<p>Kullanılan temel komut: “İş analitiği dönem projem için Türkiye elektrik üretim ve tüketim verileri üzerinde R ve Quarto kullanarak analiz yapmamda adım adım yardımcı ol.”</p>
 
+
+<!-- -->
 
 </section>
 
@@ -487,6 +808,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -816,7 +1188,283 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> 'Türkiye’de Elektrik Üretim ve Tüketim Dinamiklerinin Analizi'</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>Proje raporunun güncel web sürümüne <span class="co">[</span><span class="ot">buradan erişebilirsiniz</span><span class="co">](https://emu-hacettepe-analytics.github.io/muy665-bahar2026-seherseven/proje.html)</span>.</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># Proje Genel Bakış ve Kapsamı</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>Bu projede Türkiye’nin elektrik üretim ve tüketim verileri EPİAŞ Şeffaflık Platformu kullanılarak analiz edilmiştir.</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>Çalışmanın amacı, elektrik üretim ve tüketim eğilimlerini incelemek, enerji kaynaklarının dağılımını analiz etmek ve yenilenebilir enerji kullanımındaki değişimleri değerlendirmektir.</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>Proje kapsamında zaman serisi analizi, keşifsel veri analizi (EDA), veri görselleştirme ve trend incelemeleri gerçekleştirilmiştir.</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="fu"># Veri</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>Veri setinde:</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>elektrik üretim miktarları,</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>elektrik talebi değerleri,</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>enerji kaynak türleri,</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>tarih ve saat bilgileri,</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>piyasa fiyatı değişkenleri</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>yer almaktadır.</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Veri Kaynağı</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>Çalışmada kullanılan veri seti Mendeley Data platformu üzerinden erişilen ve EPİAŞ Şeffaflık Platformu kaynaklı verilerden oluşturulan Türkiye elektrik piyasası veri setidir.</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>Veri seti; saatlik elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı değişkenlerini içermektedir. Bu nedenle çalışma, Türkiye elektrik piyasasına ilişkin gerçek dünya verileri üzerinde yürütülmüştür.</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>Veri kaynağı: https://data.mendeley.com/datasets/7z3fndwnjv</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>EPİAŞ Şeffaflık Platformu: https://seffaflik.epias.com.tr/</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Veri Hakkında Genel Bilgiler</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>Veri seti Türkiye elektrik piyasasına ilişkin saatlik gözlemlerden oluşmaktadır. Veri içerisinde tarih-saat bilgisi, tahmini elektrik talebi, toplam üretim, kaynak bazlı üretim değerleri ve piyasa takas fiyatı gibi değişkenler bulunmaktadır.</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>Çalışmada özellikle elektrik talebi, toplam üretim ve kaynak bazlı üretim değişkenleri kullanılmıştır. Veri setinin zaman boyutuna sahip olması, tüketim eğilimlerinin ve üretim kaynaklarının dönemsel olarak incelenmesine olanak sağlamaktadır.</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tercih Sebebi</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>Enerji sektörü ekonomik faaliyetlerin temel göstergelerinden biridir. Elektrik üretim ve tüketim verileri; ekonomik büyüme, sanayi faaliyetleri ve mevsimsel değişimler hakkında önemli bilgiler sunmaktadır.</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>Bu veri seti;</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>gerçek dünya verisi içermesi,</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Türkiye elektrik piyasasıyla doğrudan ilişkili olması,</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>saatlik gözlemlerden oluşması,</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>üretim, talep ve fiyat değişkenlerini birlikte içermesi,</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>zaman serisi analizi ve veri görselleştirme için uygun olması</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>nedenleriyle tercih edilmiştir.</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ön İşleme</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>Analiz öncesinde veri seti üzerinde ön işleme çalışmaları gerçekleştirilmiştir.</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>Bu kapsamda:</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>veri seti R ortamına aktarılmış,</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>tarih ve saat değişkenleri analiz için uygun formata dönüştürülmüş,</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>elektrik talebini temsil eden değişken belirlenmiş,</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>üretim kaynaklarına ilişkin değişkenler incelenmiş,</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>veri setinin genel yapısı ve temel istatistikleri kontrol edilmiştir.</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a><span class="fu"># Analiz</span></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>Bu bölümde veri seti üzerinde keşifsel veri analizi, trend analizi ve görselleştirme çalışmaları gerçekleştirilmiştir.</span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>Elektrik üretim ve tüketim değişimleri incelenmiş, enerji kaynaklarının dağılımı değerlendirilmiş ve zaman içerisindeki değişimler analiz edilmiştir.</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>energy_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data_final.csv"</span>)</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>zaman <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>Datetime,</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%Y-%m-%d %H:%M:%S"</span>,</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>  <span class="at">tz =</span> <span class="st">"UTC"</span></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>tarih <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(energy_data<span class="sc">$</span>zaman)</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>tuketim <span class="ot">&lt;-</span> energy_data<span class="sc">$</span>est_demand</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(energy_data[, <span class="fu">c</span>(<span class="st">"zaman"</span>, <span class="st">"tarih"</span>, <span class="st">"tuketim"</span>, <span class="st">"total"</span>, <span class="st">"naturalgas_market"</span>, <span class="st">"wind_market"</span>, <span class="st">"solar_resm"</span>)])</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(energy_data<span class="sc">$</span>tuketim)</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Keşifsel Veri Analizi</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a>Keşifsel veri analizi kapsamında veri setinin genel yapısı incelenmiştir.</span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>Değişkenlerin dağılımları, temel istatistiksel özellikleri ve zaman içerisindeki değişimleri değerlendirilmiştir. Ayrıca enerji üretim türlerinin toplam üretim içerisindeki payları analiz edilmiştir.</span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>zaman,</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>tuketim,</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Türkiye Elektrik Talebi Zaman Serisi"</span>,</span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Tarih"</span>,</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Elektrik Talebi"</span></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a>Zaman serisi grafiği incelendiğinde, elektrik talebinin yıl içerisinde belirgin dalgalanmalar gösterdiği görülmektedir. Bu durum, elektrik talebinin durağan bir yapıya sahip olmadığını ve dönemsel koşullara bağlı olarak değişebildiğini ortaya koymaktadır. Özellikle kısa aralıklarla gerçekleşen yükseliş ve düşüşler, talebin yalnızca genel trend üzerinden değil, saatlik ve dönemsel değişimler dikkate alınarak analiz edilmesi gerektiğini göstermektedir. Bu bulgu, enerji planlaması açısından talep tahmininin ve esnek üretim kapasitesinin önemini desteklemektedir.</span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a>kaynak_uretim <span class="ot">&lt;-</span> <span class="fu">colSums</span>(</span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a>  energy_data[, <span class="fu">c</span>(</span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>    <span class="st">"naturalgas_market"</span>,</span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>    <span class="st">"wind_market"</span>,</span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lignite_market"</span>,</span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>    <span class="st">"importedcoal_market"</span>,</span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a>    <span class="st">"geothermal_market"</span>,</span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a>    <span class="st">"solar_resm"</span>,</span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a>    <span class="st">"biomass_resm"</span></span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a>  )],</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>  kaynak_uretim,</span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span>,</span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Kaynak Bazlı Toplam Elektrik Üretimi"</span>,</span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Toplam Üretim"</span></span>
+<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>Kaynak bazlı üretim dağılımı, elektrik üretiminin farklı enerji kaynakları arasında nasıl paylaşıldığını göstermektedir. Grafik, üretim portföyünde geleneksel kaynakların önemli bir yer tuttuğunu; bunun yanında rüzgâr, güneş, jeotermal ve biyokütle gibi yenilenebilir kaynakların da üretim yapısına katkı sunduğunu ortaya koymaktadır.</span>
+<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a>Bu dağılım, enerji arz güvenliği ve sürdürülebilirlik açısından önemlidir. Çünkü elektrik üretiminde kaynak çeşitliliğinin artması, piyasanın tek bir üretim türüne bağımlılığını azaltırken yenilenebilir kaynakların payının izlenmesi enerji dönüşümü açısından anlamlı bir gösterge sunmaktadır.</span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trend Analizi</span></span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>Trend analizi kapsamında elektrik üretim ve tüketim değerlerinin zaman içerisindeki değişimleri incelenmiştir.</span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>Bu bölümde özellikle:</span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>elektrik talebinin zaman içerisindeki değişimi,</span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>aylık ortalama talep düzeyleri,</span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>dönemsel dalgalanmalar,</span>
+<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>talep eğiliminin genel yönü</span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a>değerlendirilmiştir.</span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>ay <span class="ot">&lt;-</span> <span class="fu">format</span>(energy_data<span class="sc">$</span>tarih, <span class="st">"%Y-%m"</span>)</span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a>aylik_tuketim <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(tuketim <span class="sc">~</span> ay, <span class="at">data =</span> energy_data, <span class="at">FUN =</span> mean)</span>
+<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.Date</span>(<span class="fu">paste0</span>(aylik_tuketim<span class="sc">$</span>ay, <span class="st">"-01"</span>)),</span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a>  aylik_tuketim<span class="sc">$</span>tuketim,</span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"b"</span>,</span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"darkgreen"</span>,</span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Aylık Ortalama Elektrik Talebi"</span>,</span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Ay"</span>,</span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Ortalama Elektrik Talebi"</span></span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>Aylık ortalama elektrik talebi değerleri, elektrik talebindeki saatlik dalgalanmaların arındırılarak daha bütüncül bir eğilimin izlenmesini sağlamaktadır. Bu grafik, talebin yıl boyunca tekdüze bir seyir izlemediğini; belirli dönemlerde yoğunlaşan ve zayıflayan bir talep yapısına sahip olduğunu göstermektedir. Bu nedenle aylık ortalamalar, saatlik veriye kıyasla daha stratejik bir değerlendirme imkânı sunmaktadır.</span>
+<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>Elde edilen görünüm, elektrik talebinin zaman boyutunda değişkenlik gösterdiğini ve enerji talebinin dönemsel koşullarla birlikte ele alınması gerektiğini ortaya koymaktadır. Bu bulgu, enerji arz güvenliği, üretim kapasitesi planlaması ve talep tahmini çalışmalarında zaman bazlı analizlerin kritik rolünü vurgulamaktadır.</span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Uydurma</span></span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>Elektrik talebi verilerindeki eğilimleri incelemek amacıyla basit doğrusal modelleme yaklaşımı kullanılmıştır.</span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>Model yardımıyla elektrik talebinin zaman içerisindeki genel eğilimi değerlendirilmiştir.</span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>gun_no <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(energy_data<span class="sc">$</span>tarih <span class="sc">-</span> <span class="fu">min</span>(energy_data<span class="sc">$</span>tarih)) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>model_tuketim <span class="ot">&lt;-</span> <span class="fu">lm</span>(tuketim <span class="sc">~</span> gun_no, <span class="at">data =</span> energy_data)</span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>gun_no,</span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>tuketim,</span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"gray"</span>,</span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Elektrik Talebi İçin Doğrusal Trend Modeli"</span>,</span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Gün Sırası"</span>,</span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Elektrik Talebi"</span></span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(model_tuketim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_tuketim)</span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a>Doğrusal trend modeli, elektrik talebinin zaman içerisindeki genel yönünü değerlendirmek amacıyla kullanılmıştır. Saatlik elektrik talebi değerleri kısa dönemli dalgalanmalar içerdiği için tek başına tüm yapıyı açıklamakta sınırlı kalmaktadır; ancak model çizgisi, yıl geneline yayılan ortalama eğilimi görselleştirmeye yardımcı olmaktadır.</span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a>Model çıktısı, elektrik talebi değerlerinin yalnızca zaman değişkeniyle tamamen açıklanamayacağını; saatlik talep değişimlerinin farklı dış faktörlerden de etkilenebileceğini göstermektedir. Bu nedenle doğrusal model, bu çalışmada kesin bir tahmin aracı olarak değil, elektrik talebindeki genel eğilimi yorumlamak için destekleyici bir analiz yöntemi olarak kullanılmıştır.</span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hafta İçi ve Hafta Sonu Elektrik Talebi</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>gun <span class="ot">&lt;-</span> <span class="fu">weekdays</span>(<span class="fu">as.Date</span>(energy_data<span class="sc">$</span>Datetime))</span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a>energy_data<span class="sc">$</span>kategori <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>  energy_data<span class="sc">$</span>gun <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Saturday"</span>, <span class="st">"Sunday"</span>),</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hafta Sonu"</span>,</span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hafta İçi"</span></span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a>haftalik_ortalama <span class="ot">&lt;-</span> energy_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kategori) <span class="sc">%&gt;%</span></span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">ortalama_tuketim =</span> <span class="fu">mean</span>(total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a>  haftalik_ortalama,</span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> kategori,</span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> ortalama_tuketim,</span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> kategori</span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Hafta İçi ve Hafta Sonu Ortalama Elektrik Talebi"</span>,</span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Kategori"</span>,</span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ortalama Elektrik Talebi"</span></span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a>Grafik incelendiğinde hafta içi elektrik talebinin hafta sonuna göre daha yüksek olduğu görülmektedir. Bu durum sanayi faaliyetleri ve ticari kullanımın enerji tüketimi üzerindeki etkisini göstermektedir.</span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sonuçlar</span></span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a>Analiz sonuçları, elektrik talebinin yıl içerisinde sabit bir yapı göstermediğini ve zaman içinde belirgin dalgalanmalar içerdiğini ortaya koymaktadır. Saatlik elektrik talebi grafiği kısa dönemli değişimleri görünür kılarken, aylık ortalama elektrik talebi grafiği bu değişimleri daha okunabilir hale getirerek dönemsel eğilimlerin değerlendirilmesine imkân sağlamıştır.</span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a>Doğrusal trend modeli ise elektrik talebinde yıl genelinde sınırlı bir yönelim olduğunu göstermektedir. Ancak saatlik elektrik talebi değerlerindeki yüksek oynaklık, elektrik talebinin yalnızca zaman değişkeniyle açıklanamayacağını; mevsimsel koşullar, ekonomik faaliyetler, saatlik kullanım alışkanlıkları ve üretim planlama dinamikleri gibi farklı faktörlerin de dikkate alınması gerektiğini göstermektedir.</span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a><span class="fu"># Sonuçlar ve Ana Çıkarımlar</span></span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a>Bu çalışma kapsamında Türkiye elektrik piyasasına ilişkin üretim ve tüketim dinamikleri zaman serisi yaklaşımıyla incelenmiştir. Analizlerde saatlik elektrik talebi değişimleri, aylık ortalama eğilimler ve basit doğrusal trend modeli birlikte değerlendirilmiştir.</span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a>Çalışmanın temel çıkarımları şunlardır:</span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Elektrik talebi yıl boyunca dalgalı bir yapı göstermektedir.</span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Saatlik veriler kısa dönemli değişimleri ortaya koyarken, aylık ortalamalar genel eğilimi daha açık biçimde göstermektedir.</span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Doğrusal model, elektrik talebindeki genel yönelimi değerlendirmek için destekleyici bir araç sunmaktadır.</span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Elektrik talebinin yalnızca zaman değişkeniyle açıklanması sınırlıdır; daha kapsamlı analizlerde hava durumu, ekonomik faaliyet düzeyi, mevsimsel etkiler ve üretim kaynakları gibi değişkenlerin de modele dahil edilmesi gerekmektedir.</span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Hafta içi ve hafta sonu karşılaştırmaları, elektrik talebinin günlük yaşam ve ekonomik faaliyetlerle doğrudan ilişkili olduğunu göstermektedir. Hafta içi dönemlerde gözlenen daha yüksek elektrik talebi, sanayi üretimi, ticari faaliyetler ve çalışma saatlerinin enerji tüketimi üzerindeki etkisini desteklemektedir.</span>
+<span id="cb12-279"><a href="#cb12-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-280"><a href="#cb12-280" aria-hidden="true" tabindex="-1"></a>Bu bulgular, enerji planlaması, talep tahmini ve sürdürülebilir üretim stratejileri açısından zaman bazlı analizlerin önemini göstermektedir. Bu çalışma, Türkiye elektrik piyasasına ilişkin zaman bazlı eğilimlerin anlaşılması açısından temel bir çerçeve sunmaktadır. Gelecek çalışmalarda hava sıcaklığı, ekonomik göstergeler, enerji fiyatları ve tüketici davranışları gibi ek değişkenlerin modele dahil edilmesiyle daha kapsamlı tahminleme ve karar destek sistemleri geliştirilebilir. Ayrıca makine öğrenmesi yöntemlerinin kullanılması, elektrik talebinin daha yüksek doğrulukla modellenmesine katkı sağlayabilir.</span>
+<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="fu"># Yapay Zekâ Kullanım Beyanı</span></span>
+<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a>Bu proje kapsamında raporun yazım dili, analiz akışının yapılandırılması, R kodlarının düzenlenmesi ve yorumların geliştirilmesi aşamalarında ChatGPT’den destek alınmıştır. Yapay zekâ çıktıları doğrudan kopyalanmadan önce değerlendirilmiş, proje amacı ve veri setiyle uyumlu olacak şekilde düzenlenmiştir.</span>
+<span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a>Kullanılan temel komut: “İş analitiği dönem projem için Türkiye elektrik üretim ve tüketim verileri üzerinde R ve Quarto kullanarak analiz yapmamda adım adım yardımcı ol.”</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
