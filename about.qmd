@@ -5,7 +5,7 @@ sidebar: false
 
 ![](images/clipboard-556288919.jpeg){fig-align="center" width="179"}
 
-Ben Sarper Sarıkaya. \
+Ben Sarper Sarıkaya.\
 Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans programında öğrenciyim
 
 # Eğitim
@@ -31,7 +31,7 @@ Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans programında öğr
 
 # Projects
 
-1.  **Yenilenebilir Enerji Kaynakları ile Elektrik Üretimi, Depolaması, Kullanımı 2017 Ocak  - 2024 Aralık**
+1.  **Yenilenebilir Enerji Kaynakları ile Elektrik Üretimi, Depolaması, Kullanımı 2017 Ocak - 2024 Aralık**
 
     Yenilikçi Enerji Sistemleri: Güneş panelleri ve rüzgar gülleri ile elektrik üretimi ve jel akülerde depolama sistemleri geliştirerek, ev kullanımına uygun enerji üretimi sağladım.
 
